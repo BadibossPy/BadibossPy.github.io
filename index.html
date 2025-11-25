@@ -23,7 +23,9 @@
             <div class="nav-menu">
                 <a href="#about" class="nav-link active">About</a>
                 <a href="#experience" class="nav-link">Experience</a>
+                <a href="#architecture" class="nav-link">Architecture</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#concepts" class="nav-link">Concepts</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#publications" class="nav-link">Publications</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -301,13 +303,37 @@
                         </div>
                     </div>
                     <h3>GEO-AI Vision for Saudi Arabia</h3>
-                    <p>Comprehensive satellite image analysis pipeline for Saudi Arabian environmental monitoring, featuring multi-spectral classification, anomaly detection, and Docker containerization.</p>
+                    <p>Enterprise-grade satellite image analysis platform with multi-spectral classification using Random Forest and XGBoost, statistical anomaly detection, and production ETL pipelines processing Sentinel-2 ARD data.</p>
+                    <div class="project-details">
+                        <div class="project-workflow">
+                            <h5><i class="fas fa-stream"></i> Processing Pipeline:</h5>
+                            <ol>
+                                <li><strong>Data Ingestion:</strong> STAC API queries → COG downloads → xarray lazy loading</li>
+                                <li><strong>Feature Engineering:</strong> NDVI/EVI time series, phenology extraction, spatial cross-validation</li>
+                                <li><strong>ML Training:</strong> Blocked spatial CV, hyperparameter optimization with Optuna</li>
+                                <li><strong>Production API:</strong> FastAPI + Pydantic validation, automated model retraining</li>
+                            </ol>
+                        </div>
+                        <div class="project-impact">
+                            <div class="impact-metric">
+                                <span class="impact-value">95%</span>
+                                <span class="impact-label">Classification Accuracy</span>
+                            </div>
+                            <div class="impact-metric">
+                                <span class="impact-value">10TB+</span>
+                                <span class="impact-label">Data Processed</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="project-tech">
                         <span>Python</span>
                         <span>scikit-learn</span>
-                        <span>Docker</span>
+                        <span>xarray</span>
+                        <span>Dask</span>
+                        <span>FastAPI</span>
+                        <span>PostgreSQL</span>
                         <span>Sentinel-2</span>
-                        <span>OpenCV</span>
+                        <span>STAC</span>
                     </div>
                 </div>
 
@@ -363,11 +389,116 @@
                     </div>
                     <h3>Spatial Database for Dam Safety</h3>
                     <p>Enterprise-grade PostgreSQL/PostGIS implementation for national dam infrastructure with automated spatial analysis workflows and performance optimization achieving sub-500ms queries.</p>
+                    <div class="project-details">
+                        <div class="project-workflow">
+                            <h5><i class="fas fa-stream"></i> Technical Implementation:</h5>
+                            <ol>
+                                <li><strong>Schema Design:</strong> GiST indexes on geometry columns, partitioned tables by region</li>
+                                <li><strong>Performance Tuning:</strong> Query optimization with EXPLAIN ANALYZE, materialized views</li>
+                                <li><strong>Automation:</strong> PyQGIS plugins for watershed analysis and dam site suitability</li>
+                                <li><strong>Monitoring:</strong> pg_stat_statements for query performance tracking</li>
+                            </ol>
+                        </div>
+                        <div class="project-impact">
+                            <div class="impact-metric">
+                                <span class="impact-value">15x</span>
+                                <span class="impact-label">Query Speedup</span>
+                            </div>
+                            <div class="impact-metric">
+                                <span class="impact-value">70MB</span>
+                                <span class="impact-label">Index Size</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="project-tech">
                         <span>PostGIS</span>
                         <span>PyQGIS</span>
                         <span>GDAL</span>
                         <span>Bash</span>
+                        <span>pg_stat</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-type">Cloud & HPC</span>
+                        </div>
+                    </div>
+                    <h3>HPC Geospatial Processing Platform</h3>
+                    <p>Scalable cloud-native geospatial data processing platform using AWS ECS, SLURM HPC, and containerized workflows for processing terabytes of satellite imagery and climate data.</p>
+                    <div class="project-details">
+                        <div class="project-workflow">
+                            <h5><i class="fas fa-stream"></i> Architecture Components:</h5>
+                            <ol>
+                                <li><strong>Infrastructure:</strong> Terraform-managed ECS clusters with auto-scaling</li>
+                                <li><strong>Processing:</strong> Dask/xarray pipelines for distributed computation</li>
+                                <li><strong>Storage:</strong> S3 with COG format and STAC catalog integration</li>
+                                <li><strong>Orchestration:</strong> Step Functions for multi-stage workflows</li>
+                            </ol>
+                        </div>
+                        <div class="project-impact">
+                            <div class="impact-metric">
+                                <span class="impact-value">50x</span>
+                                <span class="impact-label">Processing Scale</span>
+                            </div>
+                            <div class="impact-metric">
+                                <span class="impact-value">$45/day</span>
+                                <span class="impact-label">AWS Cost</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span>AWS ECS</span>
+                        <span>Terraform</span>
+                        <span>Dask</span>
+                        <span>xarray</span>
+                        <span>STAC</span>
+                        <span>COG</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-type">Search & Analytics</span>
+                        </div>
+                    </div>
+                    <h3>ElasticSearch Geospatial Search Engine</h3>
+                    <p>High-performance geospatial search and analytics platform combining ElasticSearch spatial indexing with PostGIS accuracy, serving sub-15ms query responses for 10M+ properties.</p>
+                    <div class="project-details">
+                        <div class="project-workflow">
+                            <h5><i class="fas fa-stream"></i> Hybrid Architecture:</h5>
+                            <ol>
+                                <li><strong>Data Ingestion:</strong> CDC from PostGIS to ElasticSearch via Kafka</li>
+                                <li><strong>Indexing Strategy:</strong> Geohashing with 9-cell neighbor queries</li>
+                                <li><strong>Query Optimization:</strong> Filter context caching and script compilation</li>
+                                <li><strong>Performance Tuning:</strong> Shard allocation and replica management</li>
+                            </ol>
+                        </div>
+                        <div class="project-impact">
+                            <div class="impact-metric">
+                                <span class="impact-value">16.7x</span>
+                                <span class="impact-label">Query Speedup</span>
+                            </div>
+                            <div class="impact-metric">
+                                <span class="impact-value">10M</span>
+                                <span class="impact-label">Indexed Properties</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span>ElasticSearch</span>
+                        <span>PostGIS</span>
+                        <span>Kafka</span>
+                        <span>Geohashing</span>
+                        <span>CDC</span>
                     </div>
                 </div>
 
@@ -407,6 +538,271 @@
                         <span>SLURM</span>
                         <span>Singularity</span>
                         <span>STAC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture Section -->
+    <section id="architecture" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>System Architecture & Technical Design</h2>
+                <p>End-to-end system designs for scalable geospatial data platforms</p>
+            </div>
+
+            <div class="architecture-showcase">
+                <div class="architecture-card">
+                    <div class="architecture-header">
+                        <h3><i class="fas fa-layer-group"></i> 5-Layer Geospatial Platform Architecture</h3>
+                        <span class="architecture-type">Data Lakehouse Pattern</span>
+                    </div>
+                    <div class="architecture-diagram">
+                        <div class="layer client-layer">
+                            <div class="layer-icon"><i class="fas fa-building"></i></div>
+                            <div class="layer-content">
+                                <h4>Client Layer</h4>
+                                <p>Insurance companies, banks, municipalities accessing APIs and web dashboards</p>
+                                <div class="tech-stack">
+                                    <span>REST APIs</span>
+                                    <span>WebSocket</span>
+                                    <span>Real-time Updates</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layer-divider">↓</div>
+
+                        <div class="layer gateway-layer">
+                            <div class="layer-icon"><i class="fas fa-server"></i></div>
+                            <div class="layer-content">
+                                <h4>API Gateway Layer</h4>
+                                <p>AWS API Gateway with Lambda@Edge, CloudFront CDN, rate limiting, and authentication</p>
+                                <div class="tech-stack">
+                                    <span>AWS API Gateway</span>
+                                    <span>Lambda@Edge</span>
+                                    <span>CloudFront</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layer-divider">↓</div>
+
+                        <div class="layer processing-layer">
+                            <div class="layer-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="layer-content">
+                                <h4>Processing Layer</h4>
+                                <p>ECS containers with Python workers, GPU-enabled EKS pods for ML inference</p>
+                                <div class="tech-stack">
+                                    <span>ECS Fargate</span>
+                                    <span>EKS GPU</span>
+                                    <span>TensorFlow Serving</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layer-divider">↓</div>
+
+                        <div class="layer storage-layer">
+                            <div class="layer-icon"><i class="fas fa-database"></i></div>
+                            <div class="layer-content">
+                                <h4>Data Storage Layer</h4>
+                                <p>Hybrid storage: ElasticSearch for speed, PostGIS for accuracy, S3 for raw data</p>
+                                <div class="tech-stack">
+                                    <span>ElasticSearch</span>
+                                    <span>PostGIS</span>
+                                    <span>S3 + Glacier</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layer-divider">↓</div>
+
+                        <div class="layer ingestion-layer">
+                            <div class="layer-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <div class="layer-content">
+                                <h4>Data Ingestion Layer</h4>
+                                <p>Automated pipelines for satellite imagery, weather data, and client uploads</p>
+                                <div class="tech-stack">
+                                    <span>Sentinel Hub API</span>
+                                    <span>Planet Labs</span>
+                                    <span>Weather APIs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="architecture-metrics">
+                        <div class="metric">
+                            <div class="metric-value">10M+</div>
+                            <div class="metric-label">Properties Indexed</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">15ms</div>
+                            <div class="metric-label">Query Latency</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">1TB/day</div>
+                            <div class="metric-label">Data Processing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="architecture-card">
+                    <div class="architecture-header">
+                        <h3><i class="fas fa-stream"></i> 5-Stage Data Processing Pipeline</h3>
+                        <span class="architecture-type">End-to-End Processing</span>
+                    </div>
+                    <div class="pipeline-diagram">
+                        <div class="pipeline-stage">
+                            <div class="stage-number">1</div>
+                            <div class="stage-content">
+                                <h4>Ingestion Stage</h4>
+                                <p>S3 event triggers → Lambda → SQS queues → ECS tasks for geocoding and satellite data fetching</p>
+                                <div class="stage-tech">
+                                    <span>S3 Events</span>
+                                    <span>Lambda</span>
+                                    <span>SQS</span>
+                                    <span>Mapbox API</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pipeline-arrow">→</div>
+
+                        <div class="pipeline-stage">
+                            <div class="stage-number">2</div>
+                            <div class="stage-content">
+                                <h4>Processing Stage</h4>
+                                <p>COG conversion, ML inference for risk analysis, parallel processing on GPU-enabled instances</p>
+                                <div class="stage-tech">
+                                    <span>GDAL</span>
+                                    <span>U-Net</span>
+                                    <span>TensorFlow</span>
+                                    <span>p3.2xlarge</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pipeline-arrow">→</div>
+
+                        <div class="pipeline-stage">
+                            <div class="stage-number">3</div>
+                            <div class="stage-content">
+                                <h4>Indexing Stage</h4>
+                                <p>Enrich metadata, calculate geohashes, bulk index to ElasticSearch with spatial clustering</p>
+                                <div class="stage-tech">
+                                    <span>PostGIS</span>
+                                    <span>Geohashing</span>
+                                    <span>Bulk API</span>
+                                    <span>5000 docs/batch</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pipeline-arrow">→</div>
+
+                        <div class="pipeline-stage">
+                            <div class="stage-number">4</div>
+                            <div class="stage-content">
+                                <h4>Optimization Stage</h4>
+                                <p>OR-Tools solver for cost minimization subject to risk constraints</p>
+                                <div class="stage-tech">
+                                    <span>OR-Tools</span>
+                                    <span>Linear Programming</span>
+                                    <span>Cost-Benefit Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pipeline-arrow">→</div>
+
+                        <div class="pipeline-stage">
+                            <div class="stage-number">5</div>
+                            <div class="stage-content">
+                                <h4>Delivery Stage</h4>
+                                <p>Generate tiles, serve via FastAPI with sub-200ms SLA, PDF reports via pre-signed URLs</p>
+                                <div class="stage-tech">
+                                    <span>FastAPI</span>
+                                    <span>gdal2tiles</span>
+                                    <span>S3 Pre-signed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-performance">
+                        <div class="performance-metric">
+                            <div class="metric-icon"><i class="fas fa-clock"></i></div>
+                            <div class="metric-content">
+                                <div class="metric-value">20 minutes</div>
+                                <div class="metric-label">2,000 properties processed</div>
+                            </div>
+                        </div>
+                        <div class="performance-metric">
+                            <div class="metric-icon"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="metric-content">
+                                <div class="metric-value">$45.44/day</div>
+                                <div class="metric-label">AWS costs (optimized)</div>
+                            </div>
+                        </div>
+                        <div class="performance-metric">
+                            <div class="metric-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="metric-content">
+                                <div class="metric-value">50x parallel</div>
+                                <div class="metric-label">Processing scale</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="architecture-card">
+                    <div class="architecture-header">
+                        <h3><i class="fas fa-search"></i> ElasticSearch Spatial Architecture</h3>
+                        <span class="architecture-type">Sub-15ms Query Performance</span>
+                    </div>
+                    <div class="elasticsearch-diagram">
+                        <div class="es-cluster">
+                            <div class="es-node coordinator">
+                                <div class="node-label">Coordinating Nodes</div>
+                                <div class="node-spec">c5.2xlarge<br>8vCPU • 16GB RAM</div>
+                                <div class="node-count">×2</div>
+                            </div>
+
+                            <div class="es-node data">
+                                <div class="node-label">Data Nodes</div>
+                                <div class="node-spec">r5.4xlarge<br>16vCPU • 128GB RAM</div>
+                                <div class="node-count">×3</div>
+                            </div>
+
+                            <div class="es-shards">
+                                <div class="shard primary">P</div>
+                                <div class="shard replica">R</div>
+                                <div class="shard primary">P</div>
+                                <div class="shard replica">R</div>
+                            </div>
+                        </div>
+
+                        <div class="es-performance">
+                            <div class="query-comparison">
+                                <div class="query-type">
+                                    <h5>Spatial Queries</h5>
+                                    <div class="query-metrics">
+                                        <div class="metric-item">
+                                            <span class="metric-name">Bbox Filter</span>
+                                            <span class="metric-time">5ms</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-name">Risk Filter</span>
+                                            <span class="metric-time">3ms</span>
+                                        </div>
+                                        <div class="metric-item">
+                                            <span class="metric-name">Complex JOIN</span>
+                                            <span class="metric-time">2ms</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -596,6 +992,230 @@
                             <span class="skill-name">Climate Data Processing</span>
                             <div class="skill-level">
                                 <div class="skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Geospatial Concepts Section -->
+    <section id="concepts" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Advanced Geospatial Concepts</h2>
+                <p>Deep technical implementations of spatial indexing, data formats, and processing architectures</p>
+            </div>
+
+            <div class="concepts-grid">
+                <div class="concept-card">
+                    <div class="concept-header">
+                        <h3><i class="fas fa-database"></i> Spatial Indexing Strategies</h3>
+                        <span class="concept-type">Performance Optimization</span>
+                    </div>
+                    <div class="concept-content">
+                        <div class="indexing-comparison">
+                            <div class="index-type">
+                                <h4>B-tree Index (PostgreSQL)</h4>
+                                <p><strong>Use Case:</strong> Timestamp-based queries for temporal data</p>
+                                <p><strong>Performance:</strong> O(log n) for range queries</p>
+                                <p><strong>Implementation:</strong> Balanced tree with sequential leaf node access</p>
+                                <div class="index-pros">
+                                    <span class="tag pro">Range Queries</span>
+                                    <span class="tag pro">Sequential Access</span>
+                                </div>
+                            </div>
+
+                            <div class="index-type">
+                                <h4>R-tree Index (PostGIS)</h4>
+                                <p><strong>Use Case:</strong> Spatial proximity queries (within 1km)</p>
+                                <p><strong>Performance:</strong> O(log n + k) with branch pruning</p>
+                                <p><strong>Implementation:</strong> Hierarchical Minimum Bounding Rectangles</p>
+                                <div class="index-pros">
+                                    <span class="tag pro">2D/3D Spatial</span>
+                                    <span class="tag pro">Branch Pruning</span>
+                                </div>
+                            </div>
+
+                            <div class="index-type">
+                                <h4>Geohashing (ElasticSearch)</h4>
+                                <p><strong>Use Case:</strong> Fast aggregations and point-in-polygon</p>
+                                <p><strong>Performance:</strong> O(1) per document with 9-cell queries</p>
+                                <p><strong>Implementation:</strong> Base32 encoding with neighbor expansion</p>
+                                <div class="index-pros">
+                                    <span class="tag pro">String-based</span>
+                                    <span class="tag pro">Cache-friendly</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="indexing-performance">
+                            <h5>Query Performance Comparison</h5>
+                            <div class="performance-table">
+                                <div class="perf-row">
+                                    <span class="query-type">Bbox Filter</span>
+                                    <span class="perf-postgis">50ms</span>
+                                    <span class="perf-elastic">5ms</span>
+                                    <span class="perf-improvement">10x faster</span>
+                                </div>
+                                <div class="perf-row">
+                                    <span class="query-type">Risk Filter</span>
+                                    <span class="perf-postgis">20ms</span>
+                                    <span class="perf-elastic">3ms</span>
+                                    <span class="perf-improvement">6.7x faster</span>
+                                </div>
+                                <div class="perf-row">
+                                    <span class="query-type">Complex JOIN</span>
+                                    <span class="perf-postgis">150ms</span>
+                                    <span class="perf-elastic">2ms</span>
+                                    <span class="perf-improvement">75x faster</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-header">
+                        <h3><i class="fas fa-file-archive"></i> Cloud-Optimized Data Formats</h3>
+                        <span class="concept-type">Storage Efficiency</span>
+                    </div>
+                    <div class="concept-content">
+                        <div class="format-comparison">
+                            <div class="format-type">
+                                <h4>Cloud Optimized GeoTIFF (COG)</h4>
+                                <p><strong>Structure:</strong> Internal 256×256 tiles + overview pyramids + HTTP range requests</p>
+                                <p><strong>Advantage:</strong> Read only needed pixels without full download</p>
+                                <code>gdal_translate input.tif output.tif -co TILED=YES -co COMPRESS=DEFLATE</code>
+                                <div class="format-metrics">
+                                    <span class="metric">99% cost reduction</span>
+                                    <span class="metric">115x faster reads</span>
+                                </div>
+                            </div>
+
+                            <div class="format-type">
+                                <h4>Zarr (N-Dimensional Arrays)</h4>
+                                <p><strong>Structure:</strong> Chunked arrays with Blosc compression</p>
+                                <p><strong>Advantage:</strong> Lazy loading of time-series data</p>
+                                <code>xarray.open_zarr('data.zarr').isel(time=slice(0, 100))</code>
+                                <div class="format-metrics">
+                                    <span class="metric">640x less data transfer</span>
+                                    <span class="metric">Parallel chunked reads</span>
+                                </div>
+                            </div>
+
+                            <div class="format-type">
+                                <h4>3D Tiles (OGC Standard)</h4>
+                                <p><strong>Structure:</strong> Hierarchical tileset.json with bounding volumes</p>
+                                <p><strong>Advantage:</strong> Level-of-detail streaming for point clouds</p>
+                                <code>entwine build --input las_files/ --output tileset.json</code>
+                                <div class="format-metrics">
+                                    <span class="metric">Web-native visualization</span>
+                                    <span class="metric">Progressive loading</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="format-workflow">
+                            <h5>Data Format Selection Decision Tree</h5>
+                            <div class="decision-tree">
+                                <div class="decision-node">
+                                    <span>Single timestamp?</span>
+                                    <div class="decision-branch">
+                                        <div class="branch-option yes">Yes → COG</div>
+                                        <div class="branch-option no">No → Time-series?</div>
+                                    </div>
+                                </div>
+                                <div class="decision-node secondary">
+                                    <span>Time-series data?</span>
+                                    <div class="decision-branch">
+                                        <div class="branch-option yes">Yes → Zarr</div>
+                                        <div class="branch-option no">No → Point cloud?</div>
+                                    </div>
+                                </div>
+                                <div class="decision-node tertiary">
+                                    <span>Point cloud data?</span>
+                                    <div class="decision-branch">
+                                        <div class="branch-option yes">Yes → 3D Tiles</div>
+                                        <div class="branch-option no">No → Vector Tiles</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-header">
+                        <h3><i class="fas fa-cogs"></i> Geospatial Processing Pipelines</h3>
+                        <span class="concept-type">Scalable Architecture</span>
+                    </div>
+                    <div class="concept-content">
+                        <div class="pipeline-examples">
+                            <div class="pipeline-example">
+                                <h4>LiDAR Processing Pipeline</h4>
+                                <div class="pipeline-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span class="step-desc">PDAL: Reproject to Web Mercator</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span class="step-desc">Entwine: Generate EPT octree</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span class="step-desc">GDAL: Convert to 3D Tiles</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span class="step-desc">STAC: Catalog metadata</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pipeline-example">
+                                <h4>Hydrological Modeling Pipeline</h4>
+                                <div class="pipeline-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span class="step-desc">DEM conditioning with SAGA</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span class="step-desc">Flow direction & accumulation</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span class="step-desc">Watershed delineation</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span class="step-desc">TELEMAC-2D calibration</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="processing-optimization">
+                            <h5>Performance Optimization Techniques</h5>
+                            <div class="optimization-grid">
+                                <div class="optimization-item">
+                                    <h6><i class="fas fa-memory"></i> Memory Management</h6>
+                                    <p>Windowed reading with rasterio, Dask chunking, lazy evaluation</p>
+                                    <span class="optimization-benefit">60% memory reduction</span>
+                                </div>
+                                <div class="optimization-item">
+                                    <h6><i class="fas fa-tachometer-alt"></i> Parallel Processing</h6>
+                                    <p>Multiprocessing, SLURM arrays, ECS auto-scaling</p>
+                                    <span class="optimization-benefit">50x processing speedup</span>
+                                </div>
+                                <div class="optimization-item">
+                                    <h6><i class="fas fa-hdd"></i> Storage Optimization</h6>
+                                    <p>COG format, compression, lifecycle policies</p>
+                                    <span class="optimization-benefit">99% cost reduction</span>
+                                </div>
                             </div>
                         </div>
                     </div>
