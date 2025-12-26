@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Badre Abderrahmane Alloul - GeoAI & Hydrology Engineer specializing in geospatial data, remote sensing, and GeoSaaS systems">
+    <title>Badre Abderrahmane Alloul – GeoAI & Hydrology Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg: #fafafa;
+            --color-surface: #ffffff;
+            --color-text: #1a1a1a;
+            --color-text-muted: #666666;
+            --color-accent: #2563eb;
+            --color-accent-hover: #1d4ed8;
+            --color-border: #e5e5e5;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            --spacing-unit: 8px;
+            --opacity-default: 0.8;
+            --opacity-hover: 1;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 3);
+        }
+
+        header {
+            padding: calc(var(--spacing-unit) * 10) 0 calc(var(--spacing-unit) * 8);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .title {
+            font-size: 1.125rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .statement {
+            font-size: 1.125rem;
+            color: var(--color-text);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            max-width: 800px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+            margin-top: calc(var(--spacing-unit) * 4);
+        }
+
+        .hero-section h3 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .hero-section ul {
+            list-style: none;
+        }
+
+        .hero-section li {
+            padding-left: calc(var(--spacing-unit) * 2);
+            position: relative;
+            margin-bottom: calc(var(--spacing-unit) * 1);
+        }
+
+        .hero-section li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        main {
+            padding: calc(var(--spacing-unit) * 8) 0;
+        }
+
+        section {
+            margin-bottom: calc(var(--spacing-unit) * 12);
+        }
+
+        .section-intro {
+            max-width: 800px;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            color: var(--color-text-muted);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            padding: calc(var(--spacing-unit) * 3);
+            transition: border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: var(--color-accent);
+        }
+
+        .card h3 {
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .card p {
+            color: var(--color-text-muted);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            font-size: 0.9375rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: calc(var(--spacing-unit) * 1);
+        }
+
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1.5);
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 3px;
+            color: var(--color-text-muted);
+        }
+
+        .viz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+            margin-top: calc(var(--spacing-unit) * 4);
+        }
+
+        .viz-item {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            padding: calc(var(--spacing-unit) * 3);
+        }
+
+        .viz-item h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .viz-container {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .viz-caption {
+            font-size: 0.8125rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+        }
+
+        .tech-category h3 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .tech-category ul {
+            list-style: none;
+        }
+
+        .tech-category li {
+            padding: calc(var(--spacing-unit) * 1) 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.9375rem;
+        }
+
+        .tech-category li:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            border-top: 1px solid var(--color-border);
+            padding: calc(var(--spacing-unit) * 8) 0;
+        }
+
+        .contact-statement {
+            font-size: 1.125rem;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .contact-links {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 3);
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--color-accent-hover);
+        }
+
+        canvas {
+            max-width: 100%;
+        }
+
+        #mapViz {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-grid,
+            .cards,
+            .viz-grid,
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 calc(var(--spacing-unit) * 2);
+            }
+
+            header {
+                padding: calc(var(--spacing-unit) * 6) 0 calc(var(--spacing-unit) * 4);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Badre Abderrahmane Alloul</h1>
+            <p class="title">GeoAI & Hydrology Engineer – Geospatial Data, Remote Sensing, and GeoSaaS</p>
+            <p class="statement">I build production-grade geospatial and GeoAI systems for water, climate, and infrastructure.</p>
+            
+            <div class="hero-grid">
+                <div class="hero-section">
+                    <h3>Core Domains</h3>
+                    <ul>
+                        <li>GeoAI and spatial machine learning</li>
+                        <li>Hydrology and flood risk modeling</li>
+                        <li>Remote sensing analysis (Sentinel, ERA5)</li>
+                        <li>Energy systems and electrification planning</li>
+                        <li>GeoSaaS platform architecture</li>
+                    </ul>
+                </div>
+                <div class="hero-section">
+                    <h3>Key Capabilities</h3>
+                    <ul>
+                        <li>Geospatial data engineering and ETL pipelines</li>
+                        <li>Spatial modeling and climate data processing</li>
+                        <li>RESTful API design and microservices</li>
+                        <li>QGIS plugin development (PyQGIS)</li>
+                        <li>Interactive geospatial visualization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="geoai-water">
+                <h2>GeoAI & Water Systems</h2>
+                <p class="section-intro">
+                    I work at the intersection of hydrological modeling and geospatial AI. My focus includes flood risk assessment using ERA5 climate reanalysis, processing multi-temporal Sentinel-1/2 imagery for water body detection, and building scalable pipelines for NetCDF and GRIB data. Projects range from real-time flood monitoring to long-term climate impact analysis on water resources.
+                </p>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Flood Risk Modeling Platform</h3>
+                        <p>Integrated DEM analysis, precipitation forecasts, and hydrological simulation to generate real-time flood hazard maps. Processes 10+ years of ERA5 data with automated COG generation for web delivery.</p>
+                        <div class="tags">
+                            <span class="tag">xarray</span>
+                            <span class="tag">GDAL</span>
+                            <span class="tag">PostGIS</span>
+                            <span class="tag">NetCDF</span>
+                            <span class="tag">COG</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Sentinel-Based Water Mapping</h3>
+                        <p>Automated water body extraction from Sentinel-1 SAR and Sentinel-2 optical imagery. Implements NDWI, MNDWI, and ML-based classification with temporal analysis for seasonal variability.</p>
+                        <div class="tags">
+                            <span class="tag">Sentinel Hub</span>
+                            <span class="tag">Rasterio</span>
+                            <span class="tag">scikit-learn</span>
+                            <span class="tag">Dask</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Climate Data Processing Engine</h3>
+                        <p>Scalable pipeline for ingesting, transforming, and serving ERA5 and CMIP6 climate data. Handles multi-dimensional arrays, performs spatial aggregation, and exports to multiple formats (Zarr, COG, GeoTIFF).</p>
+                        <div class="tags">
+                            <span class="tag">xarray</span>
+                            <span class="tag">Zarr</span>
+                            <span class="tag">SLURM</span>
+                            <span class="tag">AWS S3</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="geospatial-engineering">
+                <h2>Geospatial Engineering & GeoSaaS</h2>
+                <p class="section-intro">
+                    Building production geospatial systems requires more than analysis—it demands robust data infrastructure. I design and implement PostGIS databases, STAC-compliant catalogs, FastAPI-based services, and cloud-optimized data pipelines. These systems power decision-making tools for energy, water, and urban planning.
+                </p>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Flood Risk Data Lake</h3>
+                        <p>Multi-source spatial data warehouse integrating DEM, land cover, precipitation, and river network data. Built on PostGIS with automated ingestion, versioning, and REST API for querying flood hazard zones.</p>
+                        <div class="tags">
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">PostGIS</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Hydropower GeoSaaS Toolkit</h3>
+                        <p>End-to-end platform for hydropower resource assessment. Processes hydrological time series, performs turbine selection optimization, and generates production forecasts. Includes web dashboard and QGIS plugin for site planning.</p>
+                        <div class="tags">
+                            <span class="tag">PyQGIS</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">TimescaleDB</span>
+                            <span class="tag">Plotly</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Settlement Electrification Optimization – Benin 2040</h3>
+                        <p>Geospatial optimization model for least-cost electrification planning. Combines population density, grid proximity, solar irradiance, and terrain analysis to determine optimal grid extension vs. off-grid solutions.</p>
+                        <div class="tags">
+                            <span class="tag">GeoPandas</span>
+                            <span class="tag">NetworkX</span>
+                            <span class="tag">QGIS</span>
+                            <span class="tag">BigQuery</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="visual-analytics">
+                <h2>Selected Visual Analytics</h2>
+                <p class="section-intro">
+                    Geospatial data requires effective visualization. Below are examples of analytical outputs from real projects—time series analysis of hydropower systems, cost distribution for electrification scenarios, and spatial risk mapping.
+                </p>
+                <div class="viz-grid">
+                    <div class="viz-item">
+                        <h4>Hydropower Production vs Inflow</h4>
+                        <div class="viz-container">
+                            <canvas id="timeSeriesChart"></canvas>
+                        </div>
+                        <p class="viz-caption">Monthly inflow (m³/s) and electricity generation (MWh) for a 15 MW run-of-river plant.</p>
+                    </div>
+                    <div class="viz-item">
+                        <h4>Electrification LCOE Distribution</h4>
+                        <div class="viz-container">
+                            <canvas id="histogramChart"></canvas>
+                        </div>
+                        <p class="viz-caption">Distribution of levelized cost of electricity (USD/kWh) across 2,400 unelectrified settlements.</p>
+                    </div>
+                    <div class="viz-item">
+                        <h4>Flood Hazard Zones</h4>
+                        <div class="viz-container">
+                            <svg id="mapViz" viewBox="0 0 400 280"></svg>
+                        </div>
+                        <p class="viz-caption">Simplified flood risk classification by region based on 100-year return period simulation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tech-stack">
+                <h2>Tech Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-category">
+                        <h3>Geo & Remote Sensing</h3>
+                        <ul>
+                            <li>GeoPandas, Shapely, Fiona</li>
+                            <li>Rasterio, GDAL/OGR</li>
+                            <li>xarray, Dask, Zarr</li>
+                            <li>Sentinel-1/2, Landsat, MODIS</li>
+                            <li>ERA5, CMIP6, CHIRPS</li>
+                        </ul>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Data & Platforms</h3>
+                        <ul>
+                            <li>PostgreSQL/PostGIS, TimescaleDB</li>
+                            <li>BigQuery, DuckDB</li>
+                            <li>AWS (S3, EC2, Lambda)</li>
+                            <li>Docker, Docker Compose</li>
+                            <li>SLURM, Apache Airflow</li>
+                        </ul>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Engineering & APIs</h3>
+                        <ul>
+                            <li>Python, NumPy, Pandas</li>
+                            <li>FastAPI, REST API design</li>
+                            <li>pytest, GitHub Actions</li>
+                            <li>Git, CI/CD pipelines</li>
+                            <li>OGC standards (WMS, WFS, STAC)</li>
+                        </ul>
+                    </div>
+                    <div class="tech-category">
+                        <h3>GIS & Plugins</h3>
+                        <ul>
+                            <li>QGIS, PyQGIS</li>
+                            <li>QGIS plugin development</li>
+                            <li>Leaflet, MapLibre GL</li>
+                            <li>GeoServer, TileServer</li>
+                            <li>Mapbox, Kepler.gl</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="contact-statement">Let's build the next geospatial system.</p>
+            <nav class="contact-links">
+                <a href="https://github.com/BadibossPy" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/badre-alloul" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:badre.alloul@example.com">Email</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" 
+            integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" 
+            crossorigin="anonymous"></script>
+    <script>
+        // Time Series Chart: Hydropower Production vs Inflow
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const inflowData = [45, 38, 52, 78, 95, 110, 125, 118, 85, 62, 48, 42];
+        const productionData = [8.2, 7.1, 9.5, 13.8, 16.2, 18.5, 19.8, 19.2, 15.1, 11.4, 8.9, 7.8];
+
+        const timeSeriesCtx = document.getElementById('timeSeriesChart').getContext('2d');
+        new Chart(timeSeriesCtx, {
+            type: 'line',
+            data: {
+                labels: months,
+                datasets: [
+                    {
+                        label: 'Inflow (m³/s)',
+                        data: inflowData,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        tension: 0.3,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Production (MWh)',
+                        data: productionData,
+                        borderColor: '#059669',
+                        backgroundColor: 'rgba(5, 150, 105, 0.1)',
+                        tension: 0.3,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            font: { size: 11 },
+                            boxWidth: 12
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Inflow (m³/s)',
+                            font: { size: 11 }
+                        },
+                        ticks: { font: { size: 10 } }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'Production (MWh)',
+                            font: { size: 11 }
+                        },
+                        ticks: { font: { size: 10 } },
+                        grid: {
+                            drawOnChartArea: false,
+                        }
+                    },
+                    x: {
+                        ticks: { font: { size: 10 } }
+                    }
+                }
+            }
+        });
+
+        // Histogram: LCOE Distribution
+        const lcoeBins = ['0.10-0.15', '0.15-0.20', '0.20-0.25', '0.25-0.30', '0.30-0.35', '0.35-0.40', '0.40-0.45'];
+        const lcoeCounts = [120, 420, 680, 550, 380, 180, 70];
+
+        const histogramCtx = document.getElementById('histogramChart').getContext('2d');
+        new Chart(histogramCtx, {
+            type: 'bar',
+            data: {
+                labels: lcoeBins,
+                datasets: [{
+                    label: 'Number of Settlements',
+                    data: lcoeCounts,
+                    backgroundColor: '#2563eb',
+                    borderColor: '#1d4ed8',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Settlements',
+                            font: { size: 11 }
+                        },
+                        ticks: { font: { size: 10 } }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'LCOE (USD/kWh)',
+                            font: { size: 11 }
+                        },
+                        ticks: { font: { size: 10 } }
+                    }
+                }
+            }
+        });
+
+        // SVG Map: Flood Hazard Zones
+        const mapData = [
+            { id: 'A', x: 20, y: 20, w: 80, h: 100, risk: 'low', name: 'North Region' },
+            { id: 'B', x: 110, y: 20, w: 120, h: 60, risk: 'moderate', name: 'Central Plateau' },
+            { id: 'C', x: 110, y: 90, w: 120, h: 70, risk: 'low', name: 'East Savanna' },
+            { id: 'D', x: 240, y: 20, w: 140, h: 100, risk: 'high', name: 'Delta Region' },
+            { id: 'E', x: 20, y: 130, w: 110, h: 130, risk: 'moderate', name: 'South Basin' },
+            { id: 'F', x: 140, y: 170, w: 90, h: 90, risk: 'very-high', name: 'Coastal Zone' },
+            { id: 'G', x: 240, y: 130, w: 140, h: 130, risk: 'high', name: 'River Valley' }
+        ];
+
+        const riskColors = {
+            'low': '#10b981',
+            'moderate': '#f59e0b',
+            'high': '#ef4444',
+            'very-high': '#991b1b'
+        };
+
+        const riskLabels = {
+            'low': 'Low',
+            'moderate': 'Moderate',
+            'high': 'High',
+            'very-high': 'Very High'
+        };
+
+        const svg = document.getElementById('mapViz');
+        
+        mapData.forEach(region => {
+            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            rect.setAttribute('x', region.x);
+            rect.setAttribute('y', region.y);
+            rect.setAttribute('width', region.w);
+            rect.setAttribute('height', region.h);
+            rect.setAttribute('fill', riskColors[region.risk]);
+            rect.setAttribute('stroke', '#ffffff');
+            rect.setAttribute('stroke-width', '2');
+            rect.setAttribute('opacity', getComputedStyle(document.documentElement).getPropertyValue('--opacity-default').trim() || '0.8');
+            
+            const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+            title.textContent = `${region.name}: ${riskLabels[region.risk]} Risk`;
+            rect.appendChild(title);
+            
+            const opacityDefault = getComputedStyle(document.documentElement).getPropertyValue('--opacity-default').trim() || '0.8';
+            const opacityHover = getComputedStyle(document.documentElement).getPropertyValue('--opacity-hover').trim() || '1';
+            
+            rect.addEventListener('mouseenter', function() {
+                this.setAttribute('opacity', opacityHover);
+            });
+            rect.addEventListener('mouseleave', function() {
+                this.setAttribute('opacity', opacityDefault);
+            });
+            
+            svg.appendChild(rect);
+        });
+
+        // Add legend
+        const legendY = 10;
+        const legendX = 10;
+        let offsetY = 0;
+        
+        Object.entries(riskColors).forEach(([risk, color]) => {
+            const legendRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            legendRect.setAttribute('x', legendX);
+            legendRect.setAttribute('y', legendY + offsetY);
+            legendRect.setAttribute('width', '16');
+            legendRect.setAttribute('height', '16');
+            legendRect.setAttribute('fill', color);
+            legendRect.setAttribute('stroke', '#ffffff');
+            legendRect.setAttribute('stroke-width', '1');
+            svg.appendChild(legendRect);
+            
+            const legendText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            legendText.setAttribute('x', legendX + 22);
+            legendText.setAttribute('y', legendY + offsetY + 12);
+            legendText.setAttribute('font-size', '11');
+            legendText.setAttribute('font-family', '-apple-system, sans-serif');
+            legendText.setAttribute('fill', '#1a1a1a');
+            legendText.textContent = riskLabels[risk];
+            svg.appendChild(legendText);
+            
+            offsetY += 22;
+        });
+    </script>
+</body>
+</html>

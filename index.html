@@ -3,177 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badre Abderrahmane Alloul - Geospatial Data Scientist & Computational Hydrologist</title>
-    <meta name="description" content="Geospatial Data Scientist specializing in remote sensing, hydrological modeling, and AI-driven environmental solutions. Expert in flood risk assessment, climate data processing, and geospatial analytics.">
-    <meta name="keywords" content="geospatial data science, remote sensing, hydrology, machine learning, flood modeling, climate data, Saudi Arabia, water resources">
+    <title>Badre Alloul | Geospatial Data Scientist & Computational Hydrologist</title>
+    <meta name="description" content="Geospatial Data Scientist specializing in flood modeling, climate risk analytics, and energy infrastructure. Expert in Python geospatial stack, HPC workflows, and production-grade spatial systems.">
+    <meta name="keywords" content="Geospatial Data Scientist, Computational Hydrologist, Flood Modeling, Climate Risk, PostGIS, Dask, xarray, QGIS, Remote Sensing, Python GIS, HPC, SLURM">
+    <meta name="author" content="Badre Abderrahmane Alloul">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Badre Alloul | Geospatial Data Scientist">
+    <meta property="og:description" content="Transforming research prototypes into production-grade spatial systems for flood risk, climate analytics, and energy infrastructure.">
+    <meta property="og:type" content="website">
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="cursor-glow"></div>
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <span class="nav-name">Badre Alloul</span>
-                <span class="nav-title">Geospatial Data Scientist</span>
-            </div>
+            <a href="#" class="nav-brand">badre<span class="accent">.</span></a>
             <div class="nav-menu">
-                <a href="#about" class="nav-link active">About</a>
+                <a href="#about" class="nav-link">About</a>
                 <a href="#experience" class="nav-link">Experience</a>
-                <a href="#architecture" class="nav-link">Architecture</a>
+                <a href="#stack" class="nav-link">Stack</a>
+                <a href="#education" class="nav-link">Education</a>
                 <a href="#projects" class="nav-link">Projects</a>
-                <a href="#concepts" class="nav-link">Concepts</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#publications" class="nav-link">Publications</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#contact" class="nav-link nav-cta">Contact</a>
             </div>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="nav-toggle"><span></span><span></span></div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-canvas">
+            <div class="grid-overlay"></div>
+        </div>
+        
         <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">Available for Consulting & Research Collaboration</div>
-                <h1 class="hero-title">
-                    Geospatial Data Scientist &<br>
-                    <span class="highlight">Computational Hydrologist</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Transforming environmental data into actionable insights through advanced remote sensing,
-                    machine learning, and hydrological modeling. Specializing in flood risk assessment,
-                    climate adaptation, and sustainable water resource management.
-                </p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">6+</div>
-                        <div class="stat-label">Years Experience</div>
+            <div class="hero-layout">
+                <div class="hero-photo-section">
+                    <div class="photo-frame">
+                        <div class="frame-ring"></div>
+                        <div class="frame-pulse"></div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Projects Delivered</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">Countries</div>
-                    </div>
+                    <img src="my_photo.jpg" alt="Badre Alloul" class="hero-photo">
                 </div>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Start Collaboration
-                    </a>
-                    <a href="#projects" class="btn btn-secondary">
-                        <i class="fas fa-code"></i> View Projects
-                    </a>
-                    <a href="https://github.com/BadibossPy" class="btn btn-ghost" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="floating-elements">
-                    <div class="floating-element" data-delay="0">
-                        <i class="fas fa-satellite"></i>
-                        <span>Satellite Imagery</span>
+                
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Open to Opportunities
                     </div>
-                    <div class="floating-element" data-delay="1">
-                        <i class="fas fa-water"></i>
-                        <span>Hydrology</span>
-                    </div>
-                    <div class="floating-element" data-delay="2">
-                        <i class="fas fa-brain"></i>
-                        <span>Machine Learning</span>
-                    </div>
-                    <div class="floating-element" data-delay="3">
-                        <i class="fas fa-cloud"></i>
-                        <span>Cloud Computing</span>
-                    </div>
-                    <div class="floating-element" data-delay="4">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <span>GIS Analysis</span>
-                    </div>
-                    <div class="floating-element" data-delay="5">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Data Science</span>
+                    <h1 class="hero-name">Badre Alloul</h1>
+                    <p class="hero-tagline">Geospatial Data Scientist & Computational Hydrologist</p>
+                    <p class="hero-statement">
+                        I transform research prototypes into <em>production-grade spatial systems</em>—flood risk models, climate analytics pipelines, and energy infrastructure tools—deployed across Europe, North Africa, and the Middle East. My work bridges scientific computing with real-world decision-making in water resources, renewable energy, and environmental monitoring.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="mailto:badrallouldjazairi@gmail.com" class="btn-primary">
+                            <i class="fas fa-envelope"></i> Get in Touch
+                        </a>
+                        <a href="https://github.com/BadibossPy" target="_blank" class="btn-outline">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/badre-abderrahmane-alloul" target="_blank" class="btn-outline">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="hero-bg-pattern"></div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="about-section">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Background</span>
                 <h2>About Me</h2>
-                <p>Driving innovation at the intersection of geospatial technology, environmental science, and artificial intelligence</p>
             </div>
+            
             <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm a Geospatial Data Scientist with over 6 years of experience transforming complex environmental
-                        data into actionable insights. My expertise spans remote sensing, hydrological modeling, machine
-                        learning, and cloud infrastructure, with a focus on sustainable water resource management and
-                        climate adaptation.
-                    </p>
-                    <p>
-                        Currently based in Lyon, France with a Swiss B work permit, I've led technical implementations
-                        across Europe and the Middle East, delivering national-scale geospatial solutions for government
-                        agencies, research institutions, and private sector clients. My work bridges the gap between
-                        cutting-edge research and practical applications that drive real-world impact.
-                    </p>
-                    <p>
-                        I'm passionate about developing uncertainty-aware methods for water and land management in
-                        arid environments, particularly in Saudi Arabia where I see immense potential for AI-driven
-                        environmental solutions.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Lyon, France & Geneva, Switzerland</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-language"></i>
-                            <span>Fluent: French, English, Arabic</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>MSc Hydraulic Engineering (Grenoble INP)</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-award"></i>
-                            <span>French Government Excellence Scholarship</span>
-                        </div>
-                    </div>
+                <div class="about-main">
+                    <p class="about-lead">Water resources engineer by training, turned geospatial data scientist through hands-on work in flood modeling, hydropower optimization, and climate risk analytics.</p>
+                    <p class="about-text">I specialize in building end-to-end spatial workflows—from satellite imagery processing and hydrological simulation to database architecture and API deployment. My background in hydraulic engineering provides domain expertise that shapes how I approach geospatial problems: with rigorous attention to physical processes and real-world constraints.</p>
+                    <p class="about-text">I've worked across research institutes (INRAe), energy companies (ENGIE/CNR), catastrophe risk startups (REOR20), and public infrastructure agencies (ANBT). This cross-sector experience taught me to bridge scientific rigor with operational requirements, translating complex spatial analyses into actionable outputs for engineers, planners, and decision-makers.</p>
                 </div>
-                <div class="about-image">
-                    <div class="profile-card">
-                        <div class="profile-placeholder">
-                            <i class="fas fa-user-astronaut"></i>
+                
+                <div class="languages-section">
+                    <h4>Languages</h4>
+                    <div class="language-items">
+                        <div class="language-item">
+                            <span class="lang-name">French</span>
+                            <span class="lang-level">Native</span>
                         </div>
-                        <div class="profile-info">
-                            <h3>Badre Abderrahmane Alloul</h3>
-                            <p>Geospatial Data Scientist</p>
-                            <div class="profile-links">
-                                <a href="https://linkedin.com/in/badre-abderrahmane-alloul" target="_blank">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://github.com/BadibossPy" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="mailto:badrallouldjazairi@gmail.com">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-                            </div>
+                        <div class="language-item">
+                            <span class="lang-name">Arabic</span>
+                            <span class="lang-level">Native</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="lang-name">English</span>
+                            <span class="lang-level">C2 Professional</span>
                         </div>
                     </div>
                 </div>
@@ -182,100 +118,462 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section section-alt">
+    <section id="experience" class="experience-section">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Career</span>
                 <h2>Professional Experience</h2>
-                <p>Leading geospatial innovation across research institutions, government agencies, and private sector</p>
             </div>
-            <div class="experience-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Geospatial Software Engineer</h3>
-                            <span class="timeline-date">Apr 2025 - Sep 2025</span>
+            
+            <div class="exp-timeline">
+                <!-- INRAe -->
+                <div class="exp-card current">
+                    <div class="exp-header">
+                        <div class="exp-logo-wrapper">
+                            <a href="https://www.inrae.fr/en" target="_blank" rel="noopener noreferrer" class="company-logo-link" title="Visit INRAe website">
+                                <img src="logos/BlocMarque-INRAE-CMJN-Inter_Quadri-HD-1024x369.jpg" alt="INRAe" class="company-logo">
+                            </a>
                         </div>
-                        <div class="timeline-company">INRAE (French National Institute for Agriculture & Environment)</div>
-                        <div class="timeline-location">Lyon, France</div>
-                        <ul class="timeline-achievements">
-                            <li>Transformed flood damage research prototype into production-grade Python package with modular architecture and pytest coverage</li>
-                            <li>Developed PyQGIS plugin for spectral indices (NDVI/EVI/NDWI/NBR) deployed to field users with bilingual documentation</li>
-                            <li>Designed Dask/xarray workflows for multi-TB Sentinel-2 and ERA5 datasets on SLURM clusters, cutting analysis time from days to hours</li>
-                            <li>Integrated STAC catalogs with hydrological statistics (Q10/Q50/Q90, low-flow indices) for API export</li>
+                        <div class="exp-meta">
+                            <div class="exp-date-range">
+                                <span class="exp-dates">Apr 2025 – Sep 2025</span>
+                            </div>
+                            <h3 class="exp-title">Geospatial Software Engineer</h3>
+                            <div class="exp-company">
+                                <a href="https://www.inrae.fr/en" target="_blank" rel="noopener noreferrer" class="company-name">INRAe</a>
+                                <span class="company-divider">—</span>
+                                <span class="company-type">French National Research Institute for Agriculture, Food and Environment</span>
+                            </div>
+                            <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Lyon, France</span>
+                        </div>
+                    </div>
+                    <div class="exp-content">
+                        <ul class="exp-bullets">
+                            <li>Transformed a flood damage research prototype into a production Python package with modular architecture and pytest coverage, improving reliability for recurring missions.</li>
+                            <li>Developed a PyQGIS plugin (NDVI/EVI/NDWI/NBR spectral indices) deployed to field users; delivered trainings and bilingual documentation to hydrologists and crisis-response teams.</li>
+                            <li>Designed Dask/xarray workflows for multi-TB Sentinel-2 and ERA5-Land datasets on SLURM clusters, reducing nationwide analysis turnaround from days to hours.</li>
+                            <li>Integrated STAC catalogs (Copernicus, Theia) with hydrological statistics (Q10/Q50/Q90, low-flow indices, trend analysis) for API export and decision dashboards.</li>
+                            <li>Trained deep learning segmentation models (U-Net, DeepLabv3+) on multi-GPU SLURM clusters for satellite image analysis.</li>
                         </ul>
+                        <div class="exp-tech">
+                            <span>Python</span>
+                            <span>Dask</span>
+                            <span>xarray</span>
+                            <span>PyQGIS</span>
+                            <span>SLURM</span>
+                            <span>PyTorch</span>
+                            <span>STAC</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Geospatial Data Scientist</h3>
-                            <span class="timeline-date">Dec 2024 - Jul 2025</span>
+                <!-- REOR20 -->
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div class="exp-logo-wrapper">
+                            <a href="https://reor20.com" target="_blank" rel="noopener noreferrer" class="company-logo-link" title="Visit REOR20 website">
+                                <img src="logos/reor20_logo.jpg" alt="REOR20" class="company-logo">
+                            </a>
                         </div>
-                        <div class="timeline-company">Ministry of Environment, Water & Agriculture (Saudi Arabia)</div>
-                        <div class="timeline-location">Remote</div>
-                        <ul class="timeline-achievements">
-                            <li>Built crop-type classification model using Random Forest and XGBoost on Sentinel-2 time series with spatial cross-validation</li>
-                            <li>Developed field-level production proxy model combining NDVI/EVI/NBR phenology with ERA5 precipitation data</li>
-                            <li>Implemented RESTful API with FastAPI and Pydantic serving crop condition indicators and production forecasts</li>
-                            <li>Established ETL pipeline processing Sentinel-2 ARD and ERA5 data stored in PostgreSQL/PostGIS</li>
+                        <div class="exp-meta">
+                            <div class="exp-date-range">
+                                <span class="exp-dates">Nov 2023 – Apr 2025</span>
+                            </div>
+                            <h3 class="exp-title">Computational Hydrologist</h3>
+                            <div class="exp-company">
+                                <a href="https://reor20.com" target="_blank" rel="noopener noreferrer" class="company-name">REOR20 AG</a>
+                                <span class="company-divider">—</span>
+                                <span class="company-type">Catastrophe Risk Modeling</span>
+                            </div>
+                            <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Zurich, Switzerland</span>
+                        </div>
+                    </div>
+                    <div class="exp-content">
+                        <p class="exp-summary">Engineered production 2D flood-modeling pipelines and architected a serverless cloud-native flood-risk platform.</p>
+                        <ul class="exp-bullets">
+                            <li>Architected an S3-based flood-risk data lake with STAC catalog and COG rasters, forming the backbone of a scalable hazard-data infrastructure.</li>
+                            <li>Built Dask/xarray pipelines processing Copernicus climate data (NetCDF, GRIB) for flood/climate models, optimized for SLURM clusters with preemptible instances.</li>
+                            <li>Designed and documented a FastAPI/Pydantic REST API serving PostGIS hazard layers with sub-second response times for client dashboards.</li>
+                            <li>Automated country-scale DEM processing (GDAL/SAGA) into analysis-ready COGs, reducing manual pre-processing from days to hours.</li>
+                            <li>Fine-tuned a U-Net model (TorchGeo, Sentinel-2) to segment building footprints for flood damage modeling and exposure assessment.</li>
                         </ul>
+                        <div class="exp-tech">
+                            <span>FastAPI</span>
+                            <span>PostGIS</span>
+                            <span>AWS S3</span>
+                            <span>GDAL</span>
+                            <span>TorchGeo</span>
+                            <span>Docker</span>
+                            <span>COG</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Computational Hydrologist</h3>
-                            <span class="timeline-date">Nov 2023 - Apr 2025</span>
+                <!-- ENGIE/CNR -->
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div class="exp-logo-wrapper dual-logo">
+                            <a href="https://www.cnr.tm.fr/en/" target="_blank" rel="noopener noreferrer" class="company-logo-link" title="Visit CNR website">
+                                <img src="logos/CNR.jpg" alt="CNR" class="company-logo">
+                            </a>
+                            <a href="https://www.engie.com" target="_blank" rel="noopener noreferrer" class="company-logo-link" title="Visit ENGIE website">
+                                <img src="logos/engie_green.png" alt="ENGIE Green" class="company-logo">
+                            </a>
                         </div>
-                        <div class="timeline-company">REOR20 AG (Flood Risk Management Consulting)</div>
-                        <div class="timeline-location">Zurich, Switzerland</div>
-                        <ul class="timeline-achievements">
-                            <li>Built land-cover segmentation models using pre-trained TorchGeo U-Net fine-tuned on Sentinel-2 with IoU validation</li>
-                            <li>Designed data lake on S3 with STAC catalog for raster discovery and RESTful API serving flood hazard data</li>
-                            <li>Developed Python pipelines using Dask and xarray for Copernicus climate data processing on SLURM clusters</li>
-                            <li>Containerized geospatial workflows in Singularity/Apptainer images for HPC deployment without root access</li>
+                        <div class="exp-meta">
+                            <div class="exp-date-range">
+                                <span class="exp-dates">Mar 2021 – Oct 2023</span>
+                            </div>
+                            <h3 class="exp-title">Energy Systems & Data Engineer</h3>
+                            <div class="exp-company">
+                                <a href="https://www.cnr.tm.fr/en/" target="_blank" rel="noopener noreferrer" class="company-name">ENGIE — Compagnie Nationale du Rhône</a>
+                                <span class="company-divider">—</span>
+                                <span class="company-type">Hydropower & Renewable Energy</span>
+                            </div>
+                            <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Lyon, France</span>
+                        </div>
+                    </div>
+                    <div class="exp-content">
+                        <p class="exp-summary">Built geospatial data systems and automation tools for hydropower portfolio management and renewable energy planning.</p>
+                        <ul class="exp-bullets">
+                            <li>Designed a cloud-native reporting service (S3 + AWS Lambda) to automate hydropower/climate indicators used in steering committees and regulatory reporting.</li>
+                            <li>Consolidated SCADA and ERA5 data to forecast hydropower production (MW, MWh, load factors), quantifying curtailment risks and revenue scenarios shared with grid operators (ENEDIS/RTE).</li>
+                            <li>Modeled dam cascade dependencies as a directed graph (NetworkX) to support risk analyses and compliance for interconnected assets.</li>
+                            <li>Built a renewable energy site-suitability tool (GeoPandas + MCDA) to prioritize PV/wind opportunities; results used with grid operators to align grid-connection plans.</li>
+                            <li>Ran OnSSET-based least-cost electrification scenarios for off-grid sites (PV, wind, hybrid mini-grids) combining ERA5 resources, settlement data and reinforcement costs for energy-access studies in MENA.</li>
                         </ul>
+                        <div class="exp-tech">
+                            <span>Python</span>
+                            <span>AWS Lambda</span>
+                            <span>NetworkX</span>
+                            <span>GeoPandas</span>
+                            <span>ERA5</span>
+                            <span>SCADA</span>
+                            <span>OnSSET</span>
+                        </div>
+                        <a href="ALLOUL_CNR_2020-2021_internship_report.pdf" target="_blank" class="exp-link">
+                            <i class="fas fa-file-pdf"></i> Technical Report (MSc Internship)
+                        </a>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Hydro Data Engineer</h3>
-                            <span class="timeline-date">Mar 2021 - Sep 2023</span>
+                <!-- ANBT -->
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div class="exp-logo-wrapper">
+                            <a href="https://anbt.dz" target="_blank" rel="noopener noreferrer" class="company-logo-link" title="Visit ANBT website">
+                                <img src="logos/ANBT.jpg" alt="ANBT" class="company-logo">
+                            </a>
                         </div>
-                        <div class="timeline-company">ENGIE (Hydropower Division - CNR)</div>
-                        <div class="timeline-location">Lyon, France</div>
-                        <ul class="timeline-achievements">
-                            <li>Built XGBoost-based hydrological forecasting system for hydropower portfolio with NSE > 0.75 validation metrics</li>
-                            <li>Developed Python library for automated calibration of hydraulic models using ML surrogates and uncertainty propagation</li>
-                            <li>Implemented Sobol indices for global sensitivity analysis and Monte Carlo methods for parameter uncertainty</li>
-                            <li>Maintained PostgreSQL/PostGIS database with spatial indexing and automated quality control pipelines</li>
+                        <div class="exp-meta">
+                            <div class="exp-date-range">
+                                <span class="exp-dates">Oct 2019 – Aug 2020</span>
+                            </div>
+                            <h3 class="exp-title">GIS & Spatial Database Engineer</h3>
+                            <div class="exp-company">
+                                <a href="https://anbt.dz" target="_blank" rel="noopener noreferrer" class="company-name">ANBT</a>
+                                <span class="company-divider">—</span>
+                                <span class="company-type">National Agency for Dams and Water Transfers</span>
+                            </div>
+                            <span class="exp-location"><i class="fas fa-map-marker-alt"></i> Algiers, Algeria</span>
+                        </div>
+                    </div>
+                    <div class="exp-content">
+                        <p class="exp-summary">Designed foundational geospatial infrastructure for national water-resource planning and dam site evaluation.</p>
+                        <ul class="exp-bullets">
+                            <li>Designed a PostgreSQL/PostGIS database for 150+ dams, achieving sub-500ms spatial query performance for planning applications.</li>
+                            <li>Optimized database performance via partitioned tables and multi-column GiST indexes, reducing complex spatial join latency from minutes to under 1 second.</li>
+                            <li>Automated derivation of IDF curves for ungauged basins, reducing manual analysis from hours to minutes and accelerating site-selection.</li>
+                            <li>Developed a PyQGIS plugin for automated DEM analysis and watershed delineation, enabling field teams to evaluate dam sites efficiently.</li>
                         </ul>
+                        <div class="exp-tech">
+                            <span>PostgreSQL</span>
+                            <span>PostGIS</span>
+                            <span>PyQGIS</span>
+                            <span>ArcPy</span>
+                            <span>Hydrology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="stack" class="stack-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Technical</span>
+                <h2>Tech Stack</h2>
+                <p class="section-subtitle">Tools and technologies I use to build production geospatial systems</p>
+            </div>
+
+            <div class="stack-categories">
+                <!-- Geospatial Core -->
+                <div class="stack-category">
+                    <div class="stack-cat-header">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>Geospatial & GIS</h3>
+                    </div>
+                    <p class="stack-cat-desc">Vector/raster processing, spatial analysis, and GIS platforms</p>
+                    <div class="stack-items">
+                        <div class="stack-item with-icon">
+                            <img src="https://geopandas.org/en/stable/_static/geopandas_icon_green.png" alt="GeoPandas">
+                            <span>GeoPandas</span>
+                        </div>
+                        <div class="stack-item with-icon">
+                            <img src="https://rasterio.readthedocs.io/en/stable/_static/rasterio.svg" alt="Rasterio">
+                            <span>Rasterio</span>
+                        </div>
+                        <div class="stack-item with-icon">
+                            <img src="https://gdal.org/_static/gdalicon.png" alt="GDAL">
+                            <span>GDAL/OGR</span>
+                        </div>
+                        <div class="stack-item with-icon">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/QGIS_logo_new.svg" alt="QGIS">
+                            <span>QGIS/PyQGIS</span>
+                        </div>
+                        <div class="stack-item">Shapely</div>
+                        <div class="stack-item">Fiona</div>
+                        <div class="stack-item">PyProj</div>
+                        <div class="stack-item">ArcGIS/ArcPy</div>
+                        <div class="stack-item">GeoServer</div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Spatial Database Engineer</h3>
-                            <span class="timeline-date">Oct 2019 - Aug 2020</span>
+                <!-- Data Processing -->
+                <div class="stack-category">
+                    <div class="stack-cat-header">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Data Processing & Analysis</h3>
+                    </div>
+                    <p class="stack-cat-desc">Large-scale data manipulation, array computing, and scientific analysis</p>
+                    <div class="stack-items">
+                        <div class="stack-item with-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                            <span>NumPy</span>
                         </div>
-                        <div class="timeline-company">National Agency for Dams (ANBT)</div>
-                        <div class="timeline-location">Algiers, Algeria</div>
-                        <ul class="timeline-achievements">
-                            <li>Designed PostgreSQL/PostGIS database for dams with sub-500ms spatial query performance</li>
-                            <li>Developed automated DEM analysis workflow using GDAL and PyQGIS for watershed delineation</li>
-                            <li>Built PyQGIS plugin integrating PostGIS spatial queries with raster-based hydrological analysis</li>
-                            <li>Optimized database performance via partitioned tables and multi-column GiST indexes</li>
-                        </ul>
+                        <div class="stack-item with-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                            <span>Pandas</span>
+                        </div>
+                        <div class="stack-item with-icon">
+                            <img src="https://dask.org/_static/images/dask_icon.svg" alt="Dask">
+                            <span>Dask</span>
+                        </div>
+                        <div class="stack-item">xarray</div>
+                        <div class="stack-item">SciPy</div>
+                        <div class="stack-item">Zarr</div>
+                        <div class="stack-item">NetCDF</div>
+                        <div class="stack-item">GeoTIFF</div>
+                        <div class="stack-item">GRIB</div>
+                    </div>
+                </div>
+
+                <!-- Spatial Databases -->
+                <div class="stack-category">
+                    <div class="stack-cat-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Spatial Databases</h3>
+                    </div>
+                    <p class="stack-cat-desc">Geospatial data storage, indexing, and querying</p>
+                    <div class="stack-items">
+                        <div class="stack-item with-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="stack-item with-icon">
+                            <img src="https://www.vectorlogo.zone/logos/google_bigquery/google_bigquery-icon.svg" alt="BigQuery">
+                            <span>BigQuery</span>
+                        </div>
+                        <div class="stack-item">PostGIS</div>
+                        <div class="stack-item">GeoParquet</div>
+                        <div class="stack-item">GiST Indexing</div>
+                    </div>
+                </div>
+
+                <!-- Cloud & HPC -->
+                <div class="stack-category">
+                    <div class="stack-cat-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Cloud & HPC</h3>
+                    </div>
+                    <p class="stack-cat-desc">Scalable computing infrastructure for large-scale geospatial workflows</p>
+                    <div class="stack-items">
+                        <div class="stack-item with-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS">
+                            <span>AWS</span>
+                        </div>
+                        <div class="stack-item with-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                            <span>Docker</span>
+                        </div>
+                        <div class="stack-item">S3</div>
+                        <div class="stack-item">Lambda</div>
+                        <div class="stack-item">EC2</div>
+                        <div class="stack-item">SLURM</div>
+                        <div class="stack-item">Apptainer/Singularity</div>
+                        <div class="stack-item">Azure</div>
+                    </div>
+                </div>
+
+                <!-- Remote Sensing & ML -->
+                <div class="stack-category">
+                    <div class="stack-cat-header">
+                        <i class="fas fa-satellite"></i>
+                        <h3>Remote Sensing & ML</h3>
+                    </div>
+                    <p class="stack-cat-desc">Satellite imagery analysis, land cover classification, and deep learning</p>
+                    <div class="stack-items">
+                        <div class="stack-item with-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="stack-item with-icon">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit-learn">
+                            <span>scikit-learn</span>
+                        </div>
+                        <div class="stack-item">TorchGeo</div>
+                        <div class="stack-item">U-Net</div>
+                        <div class="stack-item">Sentinel-2</div>
+                        <div class="stack-item">Landsat</div>
+                        <div class="stack-item">STAC</div>
+                        <div class="stack-item">COG</div>
+                        <div class="stack-item">NDVI/EVI/NDWI</div>
+                    </div>
+                </div>
+
+                <!-- APIs & Web -->
+                <div class="stack-category">
+                    <div class="stack-cat-header">
+                        <i class="fas fa-plug"></i>
+                        <h3>APIs & Visualization</h3>
+                    </div>
+                    <p class="stack-cat-desc">Web services, mapping interfaces, and data visualization</p>
+                    <div class="stack-items">
+                        <div class="stack-item with-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
+                            <span>FastAPI</span>
+                        </div>
+                        <div class="stack-item">REST APIs</div>
+                        <div class="stack-item">Leaflet</div>
+                        <div class="stack-item">Folium</div>
+                        <div class="stack-item">Mapbox</div>
+                        <div class="stack-item">WMS/WFS</div>
+                    </div>
+                </div>
+
+                <!-- Programming -->
+                <div class="stack-category">
+                    <div class="stack-cat-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming & DevOps</h3>
+                    </div>
+                    <p class="stack-cat-desc">Core languages, version control, and development practices</p>
+                    <div class="stack-items">
+                        <div class="stack-item with-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <span>Python</span>
+                        </div>
+                        <div class="stack-item with-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash">
+                            <span>Bash</span>
+                        </div>
+                        <div class="stack-item with-icon">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                            <span>Git</span>
+                        </div>
+                        <div class="stack-item">SQL</div>
+                        <div class="stack-item">Lua</div>
+                        <div class="stack-item">pytest</div>
+                        <div class="stack-item">CI/CD</div>
+                        <div class="stack-item">Linux</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Academic</span>
+                <h2>Education</h2>
+            </div>
+            
+            <div class="edu-timeline">
+                <!-- ENSE3 -->
+                <div class="edu-card">
+                    <a href="https://ense3.grenoble-inp.fr/en/study-at-ense3/master-in-hydraulics-civil-and-environmental-engineering#page-presentation" target="_blank" rel="noopener noreferrer" class="edu-logo-link" title="View MSc HCEE Program">
+                        <div class="edu-logo-wrapper">
+                            <img src="https://ense3.grenoble-inp.fr/medias/photo/logo-ense3-2020-rvb-cartouche-noir_1600076848861-png" alt="Grenoble INP ENSE3" class="edu-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-graduation-cap\'></i>';">
+                        </div>
+                    </a>
+                    <div class="edu-content">
+                        <div class="edu-year-badge">2020 – 2021</div>
+                        <h3>MSc Hydraulics, Civil & Environmental Engineering</h3>
+                        <div class="edu-school-info">
+                            <a href="https://ense3.grenoble-inp.fr/en" target="_blank" rel="noopener noreferrer" class="edu-school-name">Grenoble INP — ENSE3</a>
+                            <span class="edu-school-type">Graduate School of Sustainable Engineering for Energy, Water & Environment</span>
+                        </div>
+                        <span class="edu-location"><i class="fas fa-map-marker-alt"></i> Grenoble, France</span>
+                        <div class="edu-highlights">
+                            <span class="edu-highlight"><i class="fas fa-award"></i> Grande École</span>
+                            <span class="edu-highlight"><i class="fas fa-certificate"></i> Mention Très Bien</span>
+                        </div>
+                        <a href="https://ense3.grenoble-inp.fr/en/study-at-ense3/master-in-hydraulics-civil-and-environmental-engineering#page-presentation" target="_blank" rel="noopener noreferrer" class="edu-program-link">
+                            <i class="fas fa-external-link-alt"></i> View Program Details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ENSH -->
+                <div class="edu-card">
+                    <a href="https://www.ensh.dz/en/home/" target="_blank" rel="noopener noreferrer" class="edu-logo-link" title="Visit ENSH website">
+                        <div class="edu-logo-wrapper">
+                            <img src="https://www.ensh.dz/wp-content/uploads/2023/10/ENSH_LOGO-1.png" alt="ENSH" class="edu-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-graduation-cap\'></i>';">
+                        </div>
+                    </a>
+                    <div class="edu-content">
+                        <div class="edu-year-badge">2016 – 2019</div>
+                        <h3>Engineering Degree — Water Resources Engineering</h3>
+                        <div class="edu-school-info">
+                            <a href="https://www.ensh.dz/en/home/" target="_blank" rel="noopener noreferrer" class="edu-school-name">ENSH — École Nationale Supérieure d'Hydraulique</a>
+                            <span class="edu-school-type">National Higher School of Hydraulics</span>
+                        </div>
+                        <span class="edu-location"><i class="fas fa-map-marker-alt"></i> Blida, Algeria</span>
+                        <div class="edu-highlights">
+                            <span class="edu-highlight"><i class="fas fa-trophy"></i> Top of Class</span>
+                            <span class="edu-highlight"><i class="fas fa-medal"></i> French Government Excellence Scholarship</span>
+                        </div>
+                        <a href="https://www.ensh.dz/en/home/" target="_blank" rel="noopener noreferrer" class="edu-program-link">
+                            <i class="fas fa-external-link-alt"></i> Visit School Website
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ENP Preparatory -->
+                <div class="edu-card">
+                    <a href="https://www.enp.edu.dz/en/" target="_blank" rel="noopener noreferrer" class="edu-logo-link" title="Visit ENP website">
+                        <div class="edu-logo-wrapper">
+                            <img src="https://www.enp.edu.dz/wp-content/uploads/2019/04/logo-enp-min-e1566901248498.png" alt="ENP" class="edu-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-graduation-cap\'></i>';">
+                        </div>
+                    </a>
+                    <div class="edu-content">
+                        <div class="edu-year-badge">2014 – 2016</div>
+                        <h3>Preparatory Classes — Applied Mathematics & Physics</h3>
+                        <div class="edu-school-info">
+                            <a href="https://www.enp.edu.dz/en/" target="_blank" rel="noopener noreferrer" class="edu-school-name">École Nationale Polytechnique d'Algérie</a>
+                            <span class="edu-school-type">National Polytechnic School of Algeria</span>
+                        </div>
+                        <span class="edu-location"><i class="fas fa-map-marker-alt"></i> Algiers, Algeria</span>
+                        <div class="edu-highlights">
+                            <span class="edu-highlight"><i class="fas fa-star"></i> Ranked 2/900 at National Engineering Entrance Exam</span>
+                        </div>
+                        <a href="https://www.enp.edu.dz/en/" target="_blank" rel="noopener noreferrer" class="edu-program-link">
+                            <i class="fas fa-external-link-alt"></i> Visit School Website
+                        </a>
                     </div>
                 </div>
             </div>
@@ -283,1082 +581,187 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
+    <section id="projects" class="projects-section">
         <div class="container">
             <div class="section-header">
-                <h2>Featured Projects</h2>
-                <p>Open-source tools and research implementations showcasing geospatial AI and hydrological modeling</p>
+                <span class="section-label">Portfolio</span>
+                <h2>Projects</h2>
+                <p class="section-subtitle">Selected work demonstrating technical depth and domain expertise</p>
             </div>
+            
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-satellite"></i>
-                        </div>
-                        <div class="project-meta">
-                            <span class="project-type">Remote Sensing & AI</span>
-                            <a href="https://github.com/BadibossPy/GEO-AI-Vision-for-Saudi-Arabia" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
+                <div class="project-card featured">
+                    <div class="project-label">Open Source</div>
+                    <div class="project-visual">
+                        <i class="fas fa-satellite-dish"></i>
                     </div>
-                    <h3>GEO-AI Vision for Saudi Arabia</h3>
-                    <p>Enterprise-grade satellite image analysis platform with multi-spectral classification using Random Forest and XGBoost, statistical anomaly detection, and production ETL pipelines processing Sentinel-2 ARD data.</p>
-                    <div class="project-details">
-                        <div class="project-workflow">
-                            <h5><i class="fas fa-stream"></i> Processing Pipeline:</h5>
-                            <ol>
-                                <li><strong>Data Ingestion:</strong> STAC API queries → COG downloads → xarray lazy loading</li>
-                                <li><strong>Feature Engineering:</strong> NDVI/EVI time series, phenology extraction, spatial cross-validation</li>
-                                <li><strong>ML Training:</strong> Blocked spatial CV, hyperparameter optimization with Optuna</li>
-                                <li><strong>Production API:</strong> FastAPI + Pydantic validation, automated model retraining</li>
-                            </ol>
+                    <div class="project-info">
+                        <h3>GEO-AI-Vision for Saudi Arabia</h3>
+                        <p>Geospatial AI pipeline for land-use and environmental monitoring in arid regions, combining Sentinel-2 imagery with deep learning for sustainable planning. Implements U-Net architecture for semantic segmentation with comprehensive documentation of the model development process.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>PyTorch</span>
+                            <span>Sentinel-2</span>
+                            <span>U-Net</span>
+                            <span>GeoPandas</span>
                         </div>
-                        <div class="project-impact">
-                            <div class="impact-metric">
-                                <span class="impact-value">95%</span>
-                                <span class="impact-label">Classification Accuracy</span>
-                            </div>
-                            <div class="impact-metric">
-                                <span class="impact-value">10TB+</span>
-                                <span class="impact-label">Data Processed</span>
-                            </div>
-                        </div>
+                        <a href="https://github.com/BadibossPy/GEO-AI-Vision-for-Saudi-Arabia" target="_blank" class="project-btn">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
                     </div>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>scikit-learn</span>
-                        <span>xarray</span>
-                        <span>Dask</span>
-                        <span>FastAPI</span>
-                        <span>PostgreSQL</span>
-                        <span>Sentinel-2</span>
-                        <span>STAC</span>
+                </div>
+
+                <div class="project-card highlight">
+                    <div class="project-label gold">2nd Place — Hackathon</div>
+                    <div class="project-visual">
+                        <img src="idws_PHOTO2.jpg" alt="IDWS Miyahthon 2024">
+                    </div>
+                    <div class="project-info">
+                        <h3>IDWS Miyahthon 2024 — Jeddah, KSA</h3>
+                        <p>Led a team to 2nd place at the Water Technologies Hackathon. Developed a micro-hydroelectric optimization model in 3 months for rural water/energy system design using Python, SketchUp and EPANET.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>EPANET</span>
+                            <span>Optimization</span>
+                            <span>Hydraulics</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-water"></i>
-                        </div>
-                        <div class="project-meta">
-                            <span class="project-type">Hydrology & API</span>
-                            <span class="project-status">In Development</span>
-                        </div>
+                    <div class="project-label">Interactive Demo</div>
+                    <div class="project-visual">
+                        <i class="fas fa-water"></i>
                     </div>
-                    <h3>Vegetation Indices API</h3>
-                    <p>FastAPI service for real-time computation of vegetation indices (NDVI, EVI, SAVI, NDWI, NBR) with zonal statistics, temporal trend analysis, and custom band mathematics.</p>
-                    <div class="project-tech">
-                        <span>FastAPI</span>
-                        <span>Rasterio</span>
-                        <span>xarray</span>
-                        <span>Dask</span>
-                        <span>PostgreSQL</span>
+                    <div class="project-info">
+                        <h3>Lyon Flood Lab</h3>
+                        <p>Interactive flood extent simulation with depth-damage curves, mitigation ROI analysis, and real-time scenario exploration. Demonstrates geospatial visualization and risk assessment concepts.</p>
+                        <div class="project-tech">
+                            <span>Leaflet</span>
+                            <span>Chart.js</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="projects/lyon-flood-app/index.html" target="_blank" class="project-btn">
+                            <i class="fas fa-play"></i> Launch Demo
+                        </a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="project-meta">
-                            <span class="project-type">Competition & Research</span>
-                            <span class="project-status">2nd Place</span>
-                        </div>
+                    <div class="project-label">Interactive Demo</div>
+                    <div class="project-visual">
+                        <i class="fas fa-truck"></i>
                     </div>
-                    <h3>IDWS Miyathon KSA 2024</h3>
-                    <p>48-hour hackathon victory developing micro-hydroelectric optimization model combining geospatial screening with hydraulic network analysis for water infrastructure planning.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>EPANET</span>
-                        <span>GeoPandas</span>
-                        <span>Hydraulic Modeling</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-database"></i>
+                    <div class="project-info">
+                        <h3>Supply Chain Analyzer</h3>
+                        <p>Network-based agricultural supply chain analysis with vulnerability assessment, route optimization, and climate risk modeling. Showcases graph-based spatial analysis capabilities.</p>
+                        <div class="project-tech">
+                            <span>NetworkX</span>
+                            <span>GeoPandas</span>
+                            <span>Plotly</span>
                         </div>
-                        <div class="project-meta">
-                            <span class="project-type">Database & GIS</span>
-                        </div>
-                    </div>
-                    <h3>Spatial Database for Dam Safety</h3>
-                    <p>Enterprise-grade PostgreSQL/PostGIS implementation for national dam infrastructure with automated spatial analysis workflows and performance optimization achieving sub-500ms queries.</p>
-                    <div class="project-details">
-                        <div class="project-workflow">
-                            <h5><i class="fas fa-stream"></i> Technical Implementation:</h5>
-                            <ol>
-                                <li><strong>Schema Design:</strong> GiST indexes on geometry columns, partitioned tables by region</li>
-                                <li><strong>Performance Tuning:</strong> Query optimization with EXPLAIN ANALYZE, materialized views</li>
-                                <li><strong>Automation:</strong> PyQGIS plugins for watershed analysis and dam site suitability</li>
-                                <li><strong>Monitoring:</strong> pg_stat_statements for query performance tracking</li>
-                            </ol>
-                        </div>
-                        <div class="project-impact">
-                            <div class="impact-metric">
-                                <span class="impact-value">15x</span>
-                                <span class="impact-label">Query Speedup</span>
-                            </div>
-                            <div class="impact-metric">
-                                <span class="impact-value">70MB</span>
-                                <span class="impact-label">Index Size</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span>PostGIS</span>
-                        <span>PyQGIS</span>
-                        <span>GDAL</span>
-                        <span>Bash</span>
-                        <span>pg_stat</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <div class="project-meta">
-                            <span class="project-type">Cloud & HPC</span>
-                        </div>
-                    </div>
-                    <h3>HPC Geospatial Processing Platform</h3>
-                    <p>Scalable cloud-native geospatial data processing platform using AWS ECS, SLURM HPC, and containerized workflows for processing terabytes of satellite imagery and climate data.</p>
-                    <div class="project-details">
-                        <div class="project-workflow">
-                            <h5><i class="fas fa-stream"></i> Architecture Components:</h5>
-                            <ol>
-                                <li><strong>Infrastructure:</strong> Terraform-managed ECS clusters with auto-scaling</li>
-                                <li><strong>Processing:</strong> Dask/xarray pipelines for distributed computation</li>
-                                <li><strong>Storage:</strong> S3 with COG format and STAC catalog integration</li>
-                                <li><strong>Orchestration:</strong> Step Functions for multi-stage workflows</li>
-                            </ol>
-                        </div>
-                        <div class="project-impact">
-                            <div class="impact-metric">
-                                <span class="impact-value">50x</span>
-                                <span class="impact-label">Processing Scale</span>
-                            </div>
-                            <div class="impact-metric">
-                                <span class="impact-value">$45/day</span>
-                                <span class="impact-label">AWS Cost</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span>AWS ECS</span>
-                        <span>Terraform</span>
-                        <span>Dask</span>
-                        <span>xarray</span>
-                        <span>STAC</span>
-                        <span>COG</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <div class="project-meta">
-                            <span class="project-type">Search & Analytics</span>
-                        </div>
-                    </div>
-                    <h3>ElasticSearch Geospatial Search Engine</h3>
-                    <p>High-performance geospatial search and analytics platform combining ElasticSearch spatial indexing with PostGIS accuracy, serving sub-15ms query responses for 10M+ properties.</p>
-                    <div class="project-details">
-                        <div class="project-workflow">
-                            <h5><i class="fas fa-stream"></i> Hybrid Architecture:</h5>
-                            <ol>
-                                <li><strong>Data Ingestion:</strong> CDC from PostGIS to ElasticSearch via Kafka</li>
-                                <li><strong>Indexing Strategy:</strong> Geohashing with 9-cell neighbor queries</li>
-                                <li><strong>Query Optimization:</strong> Filter context caching and script compilation</li>
-                                <li><strong>Performance Tuning:</strong> Shard allocation and replica management</li>
-                            </ol>
-                        </div>
-                        <div class="project-impact">
-                            <div class="impact-metric">
-                                <span class="impact-value">16.7x</span>
-                                <span class="impact-label">Query Speedup</span>
-                            </div>
-                            <div class="impact-metric">
-                                <span class="impact-value">10M</span>
-                                <span class="impact-label">Indexed Properties</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span>ElasticSearch</span>
-                        <span>PostGIS</span>
-                        <span>Kafka</span>
-                        <span>Geohashing</span>
-                        <span>CDC</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="project-meta">
-                            <span class="project-type">ML & Forecasting</span>
-                        </div>
-                    </div>
-                    <h3>Hydropower Forecasting System</h3>
-                    <p>XGBoost-based operational forecasting system for 4GW hydropower portfolio with uncertainty quantification, automated calibration, and real-time performance monitoring.</p>
-                    <div class="project-tech">
-                        <span>XGBoost</span>
-                        <span>PostgreSQL</span>
-                        <span>AWS Lambda</span>
-                        <span>FastAPI</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <div class="project-meta">
-                            <span class="project-type">Cloud & HPC</span>
-                        </div>
-                    </div>
-                    <h3>Climate Data Processing Pipeline</h3>
-                    <p>Scalable ETL pipeline processing 10TB+ monthly ERA5 and CMIP6 climate data with bias correction, trend analysis, and containerized deployment on SLURM clusters.</p>
-                    <div class="project-tech">
-                        <span>xarray</span>
-                        <span>Dask</span>
-                        <span>SLURM</span>
-                        <span>Singularity</span>
-                        <span>STAC</span>
+                        <a href="projects/supply-chain/demo.html" target="_blank" class="project-btn">
+                            <i class="fas fa-play"></i> Launch Demo
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technical Architecture Section -->
-    <section id="architecture" class="section">
+    <!-- Articles Section -->
+    <section id="articles" class="articles-section">
         <div class="container">
             <div class="section-header">
-                <h2>System Architecture & Technical Design</h2>
-                <p>End-to-end system designs for scalable geospatial data platforms</p>
+                <span class="section-label">Writing</span>
+                <h2>Technical Writing</h2>
+                <p class="section-subtitle">Sharing knowledge on HPC and geospatial workflows</p>
             </div>
-
-            <div class="architecture-showcase">
-                <div class="architecture-card">
-                    <div class="architecture-header">
-                        <h3><i class="fas fa-layer-group"></i> 5-Layer Geospatial Platform Architecture</h3>
-                        <span class="architecture-type">Data Lakehouse Pattern</span>
+            
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-icon">
+                        <i class="fab fa-linkedin"></i>
                     </div>
-                    <div class="architecture-diagram">
-                        <div class="layer client-layer">
-                            <div class="layer-icon"><i class="fas fa-building"></i></div>
-                            <div class="layer-content">
-                                <h4>Client Layer</h4>
-                                <p>Insurance companies, banks, municipalities accessing APIs and web dashboards</p>
-                                <div class="tech-stack">
-                                    <span>REST APIs</span>
-                                    <span>WebSocket</span>
-                                    <span>Real-time Updates</span>
-                                </div>
-                            </div>
+                    <div class="article-content">
+                        <h3>Apptainer vs Docker: HPC Parallel Workloads</h3>
+                        <p>In exascale-bound labs tackling multi-node MPI for fluid dynamics or climate sims on SLURM clusters, containers must integrate without friction.</p>
+                        <div class="article-tags">
+                            <span>HPC</span>
+                            <span>Apptainer</span>
+                            <span>Docker</span>
+                            <span>MPI</span>
                         </div>
-
-                        <div class="layer-divider">↓</div>
-
-                        <div class="layer gateway-layer">
-                            <div class="layer-icon"><i class="fas fa-server"></i></div>
-                            <div class="layer-content">
-                                <h4>API Gateway Layer</h4>
-                                <p>AWS API Gateway with Lambda@Edge, CloudFront CDN, rate limiting, and authentication</p>
-                                <div class="tech-stack">
-                                    <span>AWS API Gateway</span>
-                                    <span>Lambda@Edge</span>
-                                    <span>CloudFront</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="layer-divider">↓</div>
-
-                        <div class="layer processing-layer">
-                            <div class="layer-icon"><i class="fas fa-cogs"></i></div>
-                            <div class="layer-content">
-                                <h4>Processing Layer</h4>
-                                <p>ECS containers with Python workers, GPU-enabled EKS pods for ML inference</p>
-                                <div class="tech-stack">
-                                    <span>ECS Fargate</span>
-                                    <span>EKS GPU</span>
-                                    <span>TensorFlow Serving</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="layer-divider">↓</div>
-
-                        <div class="layer storage-layer">
-                            <div class="layer-icon"><i class="fas fa-database"></i></div>
-                            <div class="layer-content">
-                                <h4>Data Storage Layer</h4>
-                                <p>Hybrid storage: ElasticSearch for speed, PostGIS for accuracy, S3 for raw data</p>
-                                <div class="tech-stack">
-                                    <span>ElasticSearch</span>
-                                    <span>PostGIS</span>
-                                    <span>S3 + Glacier</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="layer-divider">↓</div>
-
-                        <div class="layer ingestion-layer">
-                            <div class="layer-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                            <div class="layer-content">
-                                <h4>Data Ingestion Layer</h4>
-                                <p>Automated pipelines for satellite imagery, weather data, and client uploads</p>
-                                <div class="tech-stack">
-                                    <span>Sentinel Hub API</span>
-                                    <span>Planet Labs</span>
-                                    <span>Weather APIs</span>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="https://www.linkedin.com/posts/badre-abderrahmane-alloul_next-hpc-apptainer-activity-7382743971187544064-nfZB" target="_blank" class="article-link">
+                            Read on LinkedIn <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
-                    <div class="architecture-metrics">
-                        <div class="metric">
-                            <div class="metric-value">10M+</div>
-                            <div class="metric-label">Properties Indexed</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">15ms</div>
-                            <div class="metric-label">Query Latency</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">1TB/day</div>
-                            <div class="metric-label">Data Processing</div>
-                        </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-icon">
+                        <i class="fab fa-linkedin"></i>
                     </div>
-                </div>
-
-                <div class="architecture-card">
-                    <div class="architecture-header">
-                        <h3><i class="fas fa-stream"></i> 5-Stage Data Processing Pipeline</h3>
-                        <span class="architecture-type">End-to-End Processing</span>
+                    <div class="article-content">
+                        <h3>Apptainer vs Module: HPC Workflows</h3>
+                        <p>In HPC clusters running distributed hydrological models, the choice between module environments and Apptainer containers determines reproducibility.</p>
+                        <div class="article-tags">
+                            <span>Wflow</span>
+                            <span>Julia</span>
+                            <span>Hydrology</span>
+                        </div>
+                        <a href="https://www.linkedin.com/posts/badre-abderrahmane-alloul_module-apptainer-wflow-activity-7383418781911638016-zfNF" target="_blank" class="article-link">
+                            Read on LinkedIn <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
-                    <div class="pipeline-diagram">
-                        <div class="pipeline-stage">
-                            <div class="stage-number">1</div>
-                            <div class="stage-content">
-                                <h4>Ingestion Stage</h4>
-                                <p>S3 event triggers → Lambda → SQS queues → ECS tasks for geocoding and satellite data fetching</p>
-                                <div class="stage-tech">
-                                    <span>S3 Events</span>
-                                    <span>Lambda</span>
-                                    <span>SQS</span>
-                                    <span>Mapbox API</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pipeline-arrow">→</div>
-
-                        <div class="pipeline-stage">
-                            <div class="stage-number">2</div>
-                            <div class="stage-content">
-                                <h4>Processing Stage</h4>
-                                <p>COG conversion, ML inference for risk analysis, parallel processing on GPU-enabled instances</p>
-                                <div class="stage-tech">
-                                    <span>GDAL</span>
-                                    <span>U-Net</span>
-                                    <span>TensorFlow</span>
-                                    <span>p3.2xlarge</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pipeline-arrow">→</div>
-
-                        <div class="pipeline-stage">
-                            <div class="stage-number">3</div>
-                            <div class="stage-content">
-                                <h4>Indexing Stage</h4>
-                                <p>Enrich metadata, calculate geohashes, bulk index to ElasticSearch with spatial clustering</p>
-                                <div class="stage-tech">
-                                    <span>PostGIS</span>
-                                    <span>Geohashing</span>
-                                    <span>Bulk API</span>
-                                    <span>5000 docs/batch</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pipeline-arrow">→</div>
-
-                        <div class="pipeline-stage">
-                            <div class="stage-number">4</div>
-                            <div class="stage-content">
-                                <h4>Optimization Stage</h4>
-                                <p>OR-Tools solver for cost minimization subject to risk constraints</p>
-                                <div class="stage-tech">
-                                    <span>OR-Tools</span>
-                                    <span>Linear Programming</span>
-                                    <span>Cost-Benefit Analysis</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pipeline-arrow">→</div>
-
-                        <div class="pipeline-stage">
-                            <div class="stage-number">5</div>
-                            <div class="stage-content">
-                                <h4>Delivery Stage</h4>
-                                <p>Generate tiles, serve via FastAPI with sub-200ms SLA, PDF reports via pre-signed URLs</p>
-                                <div class="stage-tech">
-                                    <span>FastAPI</span>
-                                    <span>gdal2tiles</span>
-                                    <span>S3 Pre-signed</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pipeline-performance">
-                        <div class="performance-metric">
-                            <div class="metric-icon"><i class="fas fa-clock"></i></div>
-                            <div class="metric-content">
-                                <div class="metric-value">20 minutes</div>
-                                <div class="metric-label">2,000 properties processed</div>
-                            </div>
-                        </div>
-                        <div class="performance-metric">
-                            <div class="metric-icon"><i class="fas fa-dollar-sign"></i></div>
-                            <div class="metric-content">
-                                <div class="metric-value">$45.44/day</div>
-                                <div class="metric-label">AWS costs (optimized)</div>
-                            </div>
-                        </div>
-                        <div class="performance-metric">
-                            <div class="metric-icon"><i class="fas fa-bolt"></i></div>
-                            <div class="metric-content">
-                                <div class="metric-value">50x parallel</div>
-                                <div class="metric-label">Processing scale</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="architecture-card">
-                    <div class="architecture-header">
-                        <h3><i class="fas fa-search"></i> ElasticSearch Spatial Architecture</h3>
-                        <span class="architecture-type">Sub-15ms Query Performance</span>
-                    </div>
-                    <div class="elasticsearch-diagram">
-                        <div class="es-cluster">
-                            <div class="es-node coordinator">
-                                <div class="node-label">Coordinating Nodes</div>
-                                <div class="node-spec">c5.2xlarge<br>8vCPU • 16GB RAM</div>
-                                <div class="node-count">×2</div>
-                            </div>
-
-                            <div class="es-node data">
-                                <div class="node-label">Data Nodes</div>
-                                <div class="node-spec">r5.4xlarge<br>16vCPU • 128GB RAM</div>
-                                <div class="node-count">×3</div>
-                            </div>
-
-                            <div class="es-shards">
-                                <div class="shard primary">P</div>
-                                <div class="shard replica">R</div>
-                                <div class="shard primary">P</div>
-                                <div class="shard replica">R</div>
-                            </div>
-                        </div>
-
-                        <div class="es-performance">
-                            <div class="query-comparison">
-                                <div class="query-type">
-                                    <h5>Spatial Queries</h5>
-                                    <div class="query-metrics">
-                                        <div class="metric-item">
-                                            <span class="metric-name">Bbox Filter</span>
-                                            <span class="metric-time">5ms</span>
-                                        </div>
-                                        <div class="metric-item">
-                                            <span class="metric-name">Risk Filter</span>
-                                            <span class="metric-time">3ms</span>
-                                        </div>
-                                        <div class="metric-item">
-                                            <span class="metric-name">Complex JOIN</span>
-                                            <span class="metric-time">2ms</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2>Technical Expertise</h2>
-                <p>Comprehensive toolkit spanning geospatial analysis, machine learning, and cloud infrastructure</p>
-            </div>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <h3><i class="fas fa-globe"></i> Geospatial Analysis</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name">Rasterio & rioxarray</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">GeoPandas & Shapely</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">PyQGIS & ArcPy</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">STAC & COG</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name">scikit-learn & XGBoost</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">PyTorch & TorchGeo</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Time Series Analysis</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Hyperparameter Optimization</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3><i class="fas fa-server"></i> Data Engineering</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name">PostgreSQL & PostGIS</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">FastAPI & SQLAlchemy</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Dask & xarray</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Docker & Singularity</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 82%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name">AWS (S3, Lambda, EC2)</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">SLURM HPC</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">GitHub Actions CI/CD</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Bash & Python Automation</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3><i class="fas fa-satellite"></i> Remote Sensing</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name">Sentinel-1/2 Processing</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">SAR & Optical Fusion</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Change Detection</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Phenology Analysis</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3><i class="fas fa-water"></i> Hydrology</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name">TELEMAC-2D & HEC-HMS</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Flood Frequency Analysis</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Extreme Value Theory</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Climate Data Processing</span>
-                            <div class="skill-level">
-                                <div class="skill-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Advanced Geospatial Concepts Section -->
-    <section id="concepts" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2>Advanced Geospatial Concepts</h2>
-                <p>Deep technical implementations of spatial indexing, data formats, and processing architectures</p>
-            </div>
-
-            <div class="concepts-grid">
-                <div class="concept-card">
-                    <div class="concept-header">
-                        <h3><i class="fas fa-database"></i> Spatial Indexing Strategies</h3>
-                        <span class="concept-type">Performance Optimization</span>
-                    </div>
-                    <div class="concept-content">
-                        <div class="indexing-comparison">
-                            <div class="index-type">
-                                <h4>B-tree Index (PostgreSQL)</h4>
-                                <p><strong>Use Case:</strong> Timestamp-based queries for temporal data</p>
-                                <p><strong>Performance:</strong> O(log n) for range queries</p>
-                                <p><strong>Implementation:</strong> Balanced tree with sequential leaf node access</p>
-                                <div class="index-pros">
-                                    <span class="tag pro">Range Queries</span>
-                                    <span class="tag pro">Sequential Access</span>
-                                </div>
-                            </div>
-
-                            <div class="index-type">
-                                <h4>R-tree Index (PostGIS)</h4>
-                                <p><strong>Use Case:</strong> Spatial proximity queries (within 1km)</p>
-                                <p><strong>Performance:</strong> O(log n + k) with branch pruning</p>
-                                <p><strong>Implementation:</strong> Hierarchical Minimum Bounding Rectangles</p>
-                                <div class="index-pros">
-                                    <span class="tag pro">2D/3D Spatial</span>
-                                    <span class="tag pro">Branch Pruning</span>
-                                </div>
-                            </div>
-
-                            <div class="index-type">
-                                <h4>Geohashing (ElasticSearch)</h4>
-                                <p><strong>Use Case:</strong> Fast aggregations and point-in-polygon</p>
-                                <p><strong>Performance:</strong> O(1) per document with 9-cell queries</p>
-                                <p><strong>Implementation:</strong> Base32 encoding with neighbor expansion</p>
-                                <div class="index-pros">
-                                    <span class="tag pro">String-based</span>
-                                    <span class="tag pro">Cache-friendly</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="indexing-performance">
-                            <h5>Query Performance Comparison</h5>
-                            <div class="performance-table">
-                                <div class="perf-row">
-                                    <span class="query-type">Bbox Filter</span>
-                                    <span class="perf-postgis">50ms</span>
-                                    <span class="perf-elastic">5ms</span>
-                                    <span class="perf-improvement">10x faster</span>
-                                </div>
-                                <div class="perf-row">
-                                    <span class="query-type">Risk Filter</span>
-                                    <span class="perf-postgis">20ms</span>
-                                    <span class="perf-elastic">3ms</span>
-                                    <span class="perf-improvement">6.7x faster</span>
-                                </div>
-                                <div class="perf-row">
-                                    <span class="query-type">Complex JOIN</span>
-                                    <span class="perf-postgis">150ms</span>
-                                    <span class="perf-elastic">2ms</span>
-                                    <span class="perf-improvement">75x faster</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="concept-card">
-                    <div class="concept-header">
-                        <h3><i class="fas fa-file-archive"></i> Cloud-Optimized Data Formats</h3>
-                        <span class="concept-type">Storage Efficiency</span>
-                    </div>
-                    <div class="concept-content">
-                        <div class="format-comparison">
-                            <div class="format-type">
-                                <h4>Cloud Optimized GeoTIFF (COG)</h4>
-                                <p><strong>Structure:</strong> Internal 256×256 tiles + overview pyramids + HTTP range requests</p>
-                                <p><strong>Advantage:</strong> Read only needed pixels without full download</p>
-                                <code>gdal_translate input.tif output.tif -co TILED=YES -co COMPRESS=DEFLATE</code>
-                                <div class="format-metrics">
-                                    <span class="metric">99% cost reduction</span>
-                                    <span class="metric">115x faster reads</span>
-                                </div>
-                            </div>
-
-                            <div class="format-type">
-                                <h4>Zarr (N-Dimensional Arrays)</h4>
-                                <p><strong>Structure:</strong> Chunked arrays with Blosc compression</p>
-                                <p><strong>Advantage:</strong> Lazy loading of time-series data</p>
-                                <code>xarray.open_zarr('data.zarr').isel(time=slice(0, 100))</code>
-                                <div class="format-metrics">
-                                    <span class="metric">640x less data transfer</span>
-                                    <span class="metric">Parallel chunked reads</span>
-                                </div>
-                            </div>
-
-                            <div class="format-type">
-                                <h4>3D Tiles (OGC Standard)</h4>
-                                <p><strong>Structure:</strong> Hierarchical tileset.json with bounding volumes</p>
-                                <p><strong>Advantage:</strong> Level-of-detail streaming for point clouds</p>
-                                <code>entwine build --input las_files/ --output tileset.json</code>
-                                <div class="format-metrics">
-                                    <span class="metric">Web-native visualization</span>
-                                    <span class="metric">Progressive loading</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="format-workflow">
-                            <h5>Data Format Selection Decision Tree</h5>
-                            <div class="decision-tree">
-                                <div class="decision-node">
-                                    <span>Single timestamp?</span>
-                                    <div class="decision-branch">
-                                        <div class="branch-option yes">Yes → COG</div>
-                                        <div class="branch-option no">No → Time-series?</div>
-                                    </div>
-                                </div>
-                                <div class="decision-node secondary">
-                                    <span>Time-series data?</span>
-                                    <div class="decision-branch">
-                                        <div class="branch-option yes">Yes → Zarr</div>
-                                        <div class="branch-option no">No → Point cloud?</div>
-                                    </div>
-                                </div>
-                                <div class="decision-node tertiary">
-                                    <span>Point cloud data?</span>
-                                    <div class="decision-branch">
-                                        <div class="branch-option yes">Yes → 3D Tiles</div>
-                                        <div class="branch-option no">No → Vector Tiles</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="concept-card">
-                    <div class="concept-header">
-                        <h3><i class="fas fa-cogs"></i> Geospatial Processing Pipelines</h3>
-                        <span class="concept-type">Scalable Architecture</span>
-                    </div>
-                    <div class="concept-content">
-                        <div class="pipeline-examples">
-                            <div class="pipeline-example">
-                                <h4>LiDAR Processing Pipeline</h4>
-                                <div class="pipeline-steps">
-                                    <div class="step">
-                                        <span class="step-number">1</span>
-                                        <span class="step-desc">PDAL: Reproject to Web Mercator</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">2</span>
-                                        <span class="step-desc">Entwine: Generate EPT octree</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">3</span>
-                                        <span class="step-desc">GDAL: Convert to 3D Tiles</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">4</span>
-                                        <span class="step-desc">STAC: Catalog metadata</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pipeline-example">
-                                <h4>Hydrological Modeling Pipeline</h4>
-                                <div class="pipeline-steps">
-                                    <div class="step">
-                                        <span class="step-number">1</span>
-                                        <span class="step-desc">DEM conditioning with SAGA</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">2</span>
-                                        <span class="step-desc">Flow direction & accumulation</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">3</span>
-                                        <span class="step-desc">Watershed delineation</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">4</span>
-                                        <span class="step-desc">TELEMAC-2D calibration</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="processing-optimization">
-                            <h5>Performance Optimization Techniques</h5>
-                            <div class="optimization-grid">
-                                <div class="optimization-item">
-                                    <h6><i class="fas fa-memory"></i> Memory Management</h6>
-                                    <p>Windowed reading with rasterio, Dask chunking, lazy evaluation</p>
-                                    <span class="optimization-benefit">60% memory reduction</span>
-                                </div>
-                                <div class="optimization-item">
-                                    <h6><i class="fas fa-tachometer-alt"></i> Parallel Processing</h6>
-                                    <p>Multiprocessing, SLURM arrays, ECS auto-scaling</p>
-                                    <span class="optimization-benefit">50x processing speedup</span>
-                                </div>
-                                <div class="optimization-item">
-                                    <h6><i class="fas fa-hdd"></i> Storage Optimization</h6>
-                                    <p>COG format, compression, lifecycle policies</p>
-                                    <span class="optimization-benefit">99% cost reduction</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Research & Publications</h2>
-                <p>Contributing to the advancement of geospatial science and hydrological modeling</p>
-            </div>
-            <div class="publications-list">
-                <div class="publication-item">
-                    <div class="publication-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div class="publication-content">
-                        <h3>Phenology-aware Anomaly Detection for Arid Croplands</h3>
-                        <p>SAR-Optical fusion methodology with calibrated uncertainty for agricultural monitoring in arid environments</p>
-                        <div class="publication-meta">
-                            <span class="publication-status">Preprint in Preparation</span>
-                            <span class="publication-year">2025</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="publication-item">
-                    <div class="publication-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="publication-content">
-                        <h3>Spectral Flood-Damage Mapping (SPCD) QGIS Plugin</h3>
-                        <p>Open-source PyQGIS plugin for NDVI/EVI/NDWI/NBR analysis with field validation protocols</p>
-                        <div class="publication-meta">
-                            <span class="publication-status">Open Source</span>
-                            <span class="publication-year">2025</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="publication-item">
-                    <div class="publication-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="publication-content">
-                        <h3>IDWS Miyahthon KSA 2024 - 2nd Place</h3>
-                        <p>Micro-hydroelectric optimization model combining geospatial analysis with hydraulic network simulation</p>
-                        <div class="publication-meta">
-                            <span class="publication-status">Competition Winner</span>
-                            <span class="publication-year">2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="publication-item">
-                    <div class="publication-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="publication-content">
-                        <h3>MSc Thesis: Multi-objective Calibration for 1D/2D Hydraulic Models</h3>
-                        <p>LHS sampling, NSGA-II optimization, and Pareto analysis for TELEMAC-2D model calibration</p>
-                        <div class="publication-meta">
-                            <span class="publication-status">Academic Research</span>
-                            <span class="publication-year">2021</span>
-                        </div>
-                    </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section section-alt">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Let's Collaborate</h2>
-                <p>Ready to transform your environmental data challenges into innovative solutions</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email</h3>
-                        <p>badrallouldjazairi@gmail.com</p>
-                        <a href="mailto:badrallouldjazairi@gmail.com" class="contact-link">Send Message</a>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <h3>LinkedIn</h3>
-                        <p>Professional Network</p>
-                        <a href="https://linkedin.com/in/badre-abderrahmane-alloul" target="_blank" class="contact-link">Connect</a>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <h3>GitHub</h3>
-                        <p>Open Source Projects</p>
-                        <a href="https://github.com/BadibossPy" target="_blank" class="contact-link">View Code</a>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3>Phone</h3>
-                        <p>+33 6 05 88 73 72</p>
-                        <a href="tel:+33605887372" class="contact-link">Call</a>
-                    </div>
+            <div class="contact-wrapper">
+                <div class="contact-header">
+                    <h2>Let's Work Together</h2>
+                    <p>Open to consulting, research collaboration, and full-time opportunities in geospatial data science, climate risk analytics, and sustainable infrastructure.</p>
                 </div>
-
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                
+                <div class="contact-grid">
+                    <a href="mailto:badrallouldjazairi@gmail.com" class="contact-card primary">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-info">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">badrallouldjazairi@gmail.com</span>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                    </a>
+                    <a href="tel:+33605887372" class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-info">
+                            <span class="contact-label">Phone</span>
+                            <span class="contact-value">+33 6 05 88 73 72</span>
                         </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
+                    </a>
+                    <a href="https://linkedin.com/in/badre-abderrahmane-alloul" target="_blank" class="contact-card">
+                        <i class="fab fa-linkedin"></i>
+                        <div class="contact-info">
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">Connect with me</span>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                    </a>
+                    <a href="https://github.com/BadibossPy" target="_blank" class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <div class="contact-info">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">View my code</span>
                         </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
+                    </a>
+                </div>
+                
+                <div class="contact-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Based in Lyon, France — Available Worldwide</span>
                 </div>
             </div>
         </div>
@@ -1367,45 +770,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Badre Abderrahmane Alloul</h3>
-                    <p>Geospatial Data Scientist & Computational Hydrologist</p>
-                    <p>Transforming environmental data into sustainable solutions</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="#projects">Remote Sensing Analysis</a></li>
-                            <li><a href="#projects">Hydrological Modeling</a></li>
-                            <li><a href="#projects">Machine Learning Solutions</a></li>
-                            <li><a href="#projects">Geospatial Consulting</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Connect</h4>
-                        <ul>
-                            <li><a href="https://linkedin.com/in/badre-abderrahmane-alloul" target="_blank">LinkedIn</a></li>
-                            <li><a href="https://github.com/BadibossPy" target="_blank">GitHub</a></li>
-                            <li><a href="mailto:badrallouldjazairi@gmail.com">Email</a></li>
-                            <li><a href="#contact">Contact Form</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Location</h4>
-                        <ul>
-                            <li>Lyon, France</li>
-                            <li>Geneva, Switzerland</li>
-                            <li>Available Worldwide</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Badre Abderrahmane Alloul. All rights reserved.</p>
-                <p>Built with passion for geospatial innovation and sustainable environmental solutions.</p>
-            </div>
+            <span>© 2025 Badre Alloul</span>
+            <span class="footer-sep">•</span>
+            <span>Geospatial Data Scientist & Computational Hydrologist</span>
         </div>
     </footer>
 
