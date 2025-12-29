@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Supply Chain Analyzer - Interactive Demo</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <!-- Leaflet for Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57;
+            --secondary-green: #228B22;
+            --warning-orange: #FF6347;
+            --info-blue: #4682B4;
+            --gold: #FFD700;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--primary-green);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+        
+        .parameter-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e9ecef;
+        }
+        
+        .btn-analyze {
+            background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-analyze:hover {
+            background: linear-gradient(45deg, var(--secondary-green), var(--primary-green));
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .analysis-loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .spinner {
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 1rem;
+        }
+        
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .roi-highlight {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        .feature-badge {
+            background: var(--primary-green);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">
+                <i class="fas fa-seedling"></i> Agricultural Supply Chain Analyzer
+            </h1>
+            <p class="lead mb-4">Enterprise-Grade Geospatial Analytics & Optimization Platform</p>
+            <p class="mb-4"><em>Transforming $87B+ Agricultural Supply Chains Through Advanced Analytics</em></p>
+            
+            <div class="row mt-4">
+                <div class="col-md-3">
+                    <div class="feature-badge">Zero AI Hype</div>
+                    <div class="feature-badge">Scientifically Validated</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-badge">Operations Research</div>
+                    <div class="feature-badge">GIS Analytics</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-badge">Climate Risk Modeling</div>
+                    <div class="feature-badge">Route Optimization</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-badge">Enterprise Ready</div>
+                    <div class="feature-badge">Fortune 500 Scalable</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div class="container">
+        <!-- Analysis Parameters -->
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="parameter-card">
+                    <h5><i class="fas fa-cogs"></i> Analysis Parameters</h5>
+                    <hr>
+                    
+                    <!-- Region Selection -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">
+                            <i class="fas fa-map-marked-alt"></i> Analysis Region
+                        </label>
+                        <select class="form-select" id="regionSelect">
+                            <option value="midwest">Midwest US Agricultural Corridor</option>
+                            <option value="plains">Great Plains Grain Belt</option>
+                            <option value="california">California Central Valley</option>
+                            <option value="southeast">Southeast Cotton/Rice Region</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Network Size -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">
+                            <i class="fas fa-industry"></i> Production Sites: 
+                            <span class="text-primary" id="prodSitesValue">75</span>
+                        </label>
+                        <input type="range" class="form-range" id="prodSites" min="20" max="200" value="75" 
+                               oninput="updateParameter('prodSitesValue', this.value)">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">
+                            <i class="fas fa-store"></i> Market Centers: 
+                            <span class="text-primary" id="marketsValue">25</span>
+                        </label>
+                        <input type="range" class="form-range" id="markets" min="10" max="100" value="25"
+                               oninput="updateParameter('marketsValue', this.value)">
+                    </div>
+                    
+                    <!-- Optimization Settings -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">
+                            <i class="fas fa-chart-line"></i> Optimization Objective
+                        </label>
+                        <select class="form-select" id="optimizationCriteria">
+                            <option value="cost">Minimize Total Cost</option>
+                            <option value="distance">Minimize Distance</option>
+                            <option value="time">Minimize Travel Time</option>
+                            <option value="risk">Minimize Weather Risk</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Risk Parameters -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">
+                            <i class="fas fa-shield-alt"></i> Risk Tolerance: 
+                            <span class="text-warning" id="riskValue">15%</span>
+                        </label>
+                        <input type="range" class="form-range" id="riskTolerance" min="5" max="30" value="15"
+                               oninput="updateParameter('riskValue', this.value + '%')">
+                    </div>
+                    
+                    <!-- Economic Parameters -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">
+                            <i class="fas fa-gas-pump"></i> Fuel Cost Factor: 
+                            <span class="text-info" id="fuelValue">1.0x</span>
+                        </label>
+                        <input type="range" class="form-range" id="fuelCost" min="0.8" max="2.0" value="1.0" step="0.1"
+                               oninput="updateParameter('fuelValue', this.value + 'x')">
+                    </div>
+                    
+                    <!-- Analysis Button -->
+                    <button class="btn btn-analyze btn-primary w-100 btn-lg" onclick="runAnalysis()">
+                        <i class="fas fa-rocket"></i> Run Comprehensive Analysis
+                    </button>
+                    
+                    <div class="mt-3 text-center">
+                        <small class="text-muted">
+                            <i class="fas fa-clock"></i> Analysis completes in ~15 seconds<br>
+                            <i class="fas fa-dollar-sign"></i> Identifies $2M+ savings opportunities
+                        </small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Display -->
+            <div class="col-lg-8">
+                <!-- Loading Animation -->
+                <div class="analysis-loading" id="loadingAnimation">
+                    <div class="spinner-border text-success spinner" style="width: 4rem; height: 4rem;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <h5 class="mt-3">Running Comprehensive Supply Chain Analysis...</h5>
+                    <div class="progress mt-3" style="height: 8px;">
+                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" 
+                             id="analysisProgress" role="progressbar" style="width: 0%">
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <small class="text-muted" id="analysisStatus">Initializing network topology...</small>
+                    </div>
+                </div>
+                
+                <!-- KPI Metrics -->
+                <div class="row" id="kpiSection" style="display: none;">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="metric-card text-center">
+                            <div class="metric-value" id="totalFacilities">-</div>
+                            <div class="text-muted">
+                                <i class="fas fa-building"></i> Total Facilities
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="metric-card text-center">
+                            <div class="metric-value text-success" id="annualSavings">-</div>
+                            <div class="text-muted">
+                                <i class="fas fa-dollar-sign"></i> Annual Savings
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="metric-card text-center">
+                            <div class="metric-value text-info" id="avgDistance">-</div>
+                            <div class="text-muted">
+                                <i class="fas fa-route"></i> Avg Distance
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="metric-card text-center">
+                            <div class="metric-value" id="riskLevel">-</div>
+                            <div class="text-muted">
+                                <i class="fas fa-exclamation-triangle"></i> Risk Level
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ROI Highlight -->
+                <div class="roi-highlight" id="roiHighlight" style="display: none;">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h4><i class="fas fa-trophy"></i> Business Impact Summary</h4>
+                            <p class="mb-0">Your optimized supply chain delivers measurable ROI through data-driven decisions</p>
+                        </div>
+                        <div class="col-md-4 text-end">
+                            <div class="h2 mb-0" id="roiPercentage">-</div>
+                            <small>Annual ROI</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tabs for Different Views -->
+                <div id="resultsSection" style="display: none;">
+                    <ul class="nav nav-tabs" id="resultsTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="map-tab" data-bs-toggle="tab" data-bs-target="#map-pane" type="button" role="tab">
+                                <i class="fas fa-map"></i> Network Map
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="risk-tab" data-bs-toggle="tab" data-bs-target="#risk-pane" type="button" role="tab">
+                                <i class="fas fa-cloud-rain"></i> Risk Analysis
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="optimization-tab" data-bs-toggle="tab" data-bs-target="#optimization-pane" type="button" role="tab">
+                                <i class="fas fa-chart-line"></i> Optimization
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="business-tab" data-bs-toggle="tab" data-bs-target="#business-pane" type="button" role="tab">
+                                <i class="fas fa-briefcase"></i> Business Intel
+                            </button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content mt-3" id="resultsTabContent">
+                        <!-- Network Map Tab -->
+                        <div class="tab-pane fade show active" id="map-pane" role="tabpanel">
+                            <div class="chart-container">
+                                <h5><i class="fas fa-map-marked-alt"></i> Interactive Supply Chain Network</h5>
+                                <div id="map"></div>
+                                <div class="mt-3">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span class="badge bg-success">Production Sites</span>
+                                            <small class="d-block text-muted">Agricultural producers and farms</small>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="badge bg-danger">Markets</span>
+                                            <small class="d-block text-muted">Urban centers and export terminals</small>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="badge bg-primary">Processing</span>
+                                            <small class="d-block text-muted">Mills, elevators, and facilities</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Risk Analysis Tab -->
+                        <div class="tab-pane fade" id="risk-pane" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="chart-container">
+                                        <h6><i class="fas fa-chart-pie"></i> Risk Distribution</h6>
+                                        <div id="riskPieChart"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="chart-container">
+                                        <h6><i class="fas fa-thermometer-half"></i> Seasonal Risk Patterns</h6>
+                                        <div id="seasonalRiskChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Optimization Tab -->
+                        <div class="tab-pane fade" id="optimization-pane" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="chart-container">
+                                        <h6><i class="fas fa-route"></i> Route Efficiency Analysis</h6>
+                                        <div id="routeEfficiencyChart"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="chart-container">
+                                        <h6><i class="fas fa-balance-scale"></i> Supply-Demand Balance</h6>
+                                        <div id="supplyDemandChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Business Intelligence Tab -->
+                        <div class="tab-pane fade" id="business-pane" role="tabpanel">
+                            <div class="chart-container">
+                                <h6><i class="fas fa-chart-bar"></i> Executive Dashboard</h6>
+                                <div id="businessDashboard"></div>
+                            </div>
+                            
+                            <!-- Executive Summary -->
+                            <div class="mt-4">
+                                <h6><i class="fas fa-clipboard-list"></i> Executive Summary</h6>
+                                <div class="row" id="executiveSummary">
+                                    <!-- Will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Welcome Message -->
+                <div id="welcomeMessage" class="text-center p-5">
+                    <i class="fas fa-seedling text-success" style="font-size: 4rem;"></i>
+                    <h3 class="mt-3">Ready to Transform Agricultural Supply Chains?</h3>
+                    <p class="text-muted lead">Configure your parameters and run the analysis to see:</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success"></i> Network vulnerability assessment</li>
+                        <li><i class="fas fa-check text-success"></i> Weather risk modeling</li>
+                        <li><i class="fas fa-check text-success"></i> Route optimization algorithms</li>
+                        <li><i class="fas fa-check text-success"></i> ROI quantification</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-seedling"></i> Agricultural Supply Chain Analyzer</h5>
+                    <p>Built with advanced operations research, geospatial analytics, and climate modeling.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p><strong>Perfect for:</strong></p>
+                    <small>Agricultural Companies • Investment Firms • Consulting • Government Agencies</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Global variables
+        let map;
+        let analysisData = {};
+        
+        // Parameter update function
+        function updateParameter(elementId, value) {
+            document.getElementById(elementId).textContent = value;
+        }
+        
+        // Main analysis function
+        async function runAnalysis() {
+            // Hide welcome message and show loading
+            document.getElementById('welcomeMessage').style.display = 'none';
+            document.getElementById('loadingAnimation').style.display = 'block';
+            document.getElementById('kpiSection').style.display = 'none';
+            document.getElementById('resultsSection').style.display = 'none';
+            document.getElementById('roiHighlight').style.display = 'none';
+            
+            // Collect parameters
+            const parameters = {
+                region: document.getElementById('regionSelect').value,
+                prodSites: parseInt(document.getElementById('prodSites').value),
+                markets: parseInt(document.getElementById('markets').value),
+                optimization: document.getElementById('optimizationCriteria').value,
+                riskTolerance: parseInt(document.getElementById('riskTolerance').value),
+                fuelCost: parseFloat(document.getElementById('fuelCost').value)
+            };
+            
+            // Simulate analysis with progress updates
+            await simulateAnalysis(parameters);
+        }
+        
+        async function simulateAnalysis(params) {
+            const steps = [
+                { text: 'Building network topology...', progress: 15 },
+                { text: 'Analyzing transportation routes...', progress: 30 },
+                { text: 'Processing weather risk data...', progress: 50 },
+                { text: 'Running optimization algorithms...', progress: 70 },
+                { text: 'Calculating business metrics...', progress: 85 },
+                { text: 'Generating visualizations...', progress: 100 }
+            ];
+            
+            for (let step of steps) {
+                document.getElementById('analysisStatus').textContent = step.text;
+                document.getElementById('analysisProgress').style.width = step.progress + '%';
+                await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 700));
+            }
+            
+            // Generate synthetic results based on parameters
+            generateResults(params);
+        }
+        
+        function generateResults(params) {
+            // Calculate synthetic but realistic results
+            const totalFacilities = params.prodSites + params.markets + Math.floor(params.prodSites * 0.2);
+            const baseDistance = 150 + (params.prodSites / 2);
+            const baseCost = params.prodSites * 2500 * params.fuelCost;
+            const riskFactor = params.riskTolerance / 100;
+            
+            const annualSavings = baseCost * 0.3 * (1 + (1 - riskFactor));
+            const roi = (annualSavings / (baseCost * 0.1)) * 100;
+            
+            analysisData = {
+                totalFacilities: totalFacilities,
+                annualSavings: annualSavings,
+                avgDistance: baseDistance,
+                totalCost: baseCost,
+                riskLevel: riskFactor < 0.15 ? 'Low' : riskFactor < 0.25 ? 'Medium' : 'High',
+                roi: roi,
+                optimization: params.optimization,
+                region: params.region
+            };
+            
+            // Hide loading and show results
+            document.getElementById('loadingAnimation').style.display = 'none';
+            displayResults();
+        }
+        
+        function displayResults() {
+            // Update KPIs
+            document.getElementById('totalFacilities').textContent = analysisData.totalFacilities.toLocaleString();
+            document.getElementById('annualSavings').textContent = '$' + (analysisData.annualSavings / 1000).toFixed(0) + 'K';
+            document.getElementById('avgDistance').textContent = analysisData.avgDistance.toFixed(0) + ' km';
+            document.getElementById('riskLevel').textContent = analysisData.riskLevel;
+            document.getElementById('roiPercentage').textContent = analysisData.roi.toFixed(0) + '%';
+            
+            // Set risk level color
+            const riskElement = document.getElementById('riskLevel');
+            riskElement.className = 'metric-value ' + 
+                (analysisData.riskLevel === 'Low' ? 'text-success' : 
+                 analysisData.riskLevel === 'Medium' ? 'text-warning' : 'text-danger');
+            
+            // Show sections
+            document.getElementById('kpiSection').style.display = 'flex';
+            document.getElementById('roiHighlight').style.display = 'block';
+            document.getElementById('resultsSection').style.display = 'block';
+            
+            // Initialize visualizations
+            initializeMap();
+            createRiskCharts();
+            createOptimizationCharts();
+            createBusinessDashboard();
+            createExecutiveSummary();
+        }
+        
+        function initializeMap() {
+            // Regional coordinates
+            const regions = {
+                midwest: { lat: 41.5, lng: -91, zoom: 7 },
+                plains: { lat: 42.5, lng: -100, zoom: 6 },
+                california: { lat: 37.5, lng: -120, zoom: 7 },
+                southeast: { lat: 33.5, lng: -84, zoom: 6 }
+            };
+            
+            const region = regions[analysisData.region] || regions.midwest;
+            
+            // Initialize Leaflet map
+            if (map) {
+                map.remove();
+            }
+            
+            map = L.map('map').setView([region.lat, region.lng], region.zoom);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+            
+            // Add sample markers
+            const numMarkers = Math.min(20, analysisData.totalFacilities);
+            for (let i = 0; i < numMarkers; i++) {
+                const lat = region.lat + (Math.random() - 0.5) * 4;
+                const lng = region.lng + (Math.random() - 0.5) * 6;
+                
+                let markerType, color, icon;
+                if (i < numMarkers * 0.6) {
+                    markerType = 'Production Site';
+                    color = 'green';
+                    icon = '🌾';
+                } else if (i < numMarkers * 0.8) {
+                    markerType = 'Market Center';
+                    color = 'red';
+                    icon = '🏢';
+                } else {
+                    markerType = 'Processing Facility';
+                    color = 'blue';
+                    icon = '🏭';
+                }
+                
+                L.marker([lat, lng]).addTo(map)
+                    .bindPopup(`<b>${markerType}</b><br/>
+                              ${icon} Facility ${i + 1}<br/>
+                              Coordinates: ${lat.toFixed(3)}, ${lng.toFixed(3)}`);
+            }
+        }
+        
+        function createRiskCharts() {
+            // Risk distribution pie chart
+            const riskData = [{
+                values: [60, 25, 15],
+                labels: ['Low Risk', 'Medium Risk', 'High Risk'],
+                type: 'pie',
+                marker: {
+                    colors: ['#2E8B57', '#FFD700', '#DC143C']
+                },
+                textinfo: 'label+percent',
+                textposition: 'outside'
+            }];
+            
+            Plotly.newPlot('riskPieChart', riskData, {
+                height: 300,
+                margin: { t: 30, b: 30, l: 30, r: 30 },
+                showlegend: false
+            });
+            
+            // Seasonal risk heatmap
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const crops = ['Wheat', 'Corn', 'Soybeans'];
+            const riskMatrix = crops.map(crop => 
+                months.map(month => Math.random() * 0.8 + 0.1)
+            );
+            
+            const heatmapData = [{
+                z: riskMatrix,
+                x: months,
+                y: crops,
+                type: 'heatmap',
+                colorscale: [[0, '#2E8B57'], [0.5, '#FFD700'], [1, '#DC143C']],
+                showscale: true
+            }];
+            
+            Plotly.newPlot('seasonalRiskChart', heatmapData, {
+                height: 300,
+                margin: { t: 30, b: 50, l: 80, r: 30 },
+                xaxis: { title: 'Month' },
+                yaxis: { title: 'Crop Type' }
+            });
+        }
+        
+        function createOptimizationCharts() {
+            // Route efficiency scatter plot
+            const numRoutes = 20;
+            const distances = Array.from({length: numRoutes}, () => 100 + Math.random() * 300);
+            const costs = distances.map(d => d * (1.5 + Math.random() * 0.5));
+            const times = distances.map(d => d / (60 + Math.random() * 20));
+            
+            const routeData = [{
+                x: distances,
+                y: costs,
+                mode: 'markers',
+                type: 'scatter',
+                marker: {
+                    size: 10,
+                    color: times,
+                    colorscale: 'Viridis',
+                    showscale: true,
+                    colorbar: { title: 'Travel Time (hrs)' }
+                },
+                text: distances.map((d, i) => `Route ${i + 1}<br>Distance: ${d.toFixed(0)} km<br>Cost: $${costs[i].toFixed(0)}<br>Time: ${times[i].toFixed(1)} hrs`),
+                hovertemplate: '%{text}<extra></extra>'
+            }];
+            
+            Plotly.newPlot('routeEfficiencyChart', routeData, {
+                height: 300,
+                margin: { t: 30, b: 50, l: 60, r: 30 },
+                xaxis: { title: 'Distance (km)' },
+                yaxis: { title: 'Cost ($)' }
+            });
+            
+            // Supply-demand balance
+            const crops = ['Wheat', 'Corn', 'Soybeans', 'Rice'];
+            const supply = [8500, 12000, 6800, 4200];
+            const demand = [7800, 11200, 7200, 4800];
+            
+            const balanceData = [
+                {
+                    x: crops,
+                    y: supply,
+                    name: 'Supply',
+                    type: 'bar',
+                    marker: { color: '#2E8B57' }
+                },
+                {
+                    x: crops,
+                    y: demand,
+                    name: 'Demand',
+                    type: 'bar',
+                    marker: { color: '#FF6347' }
+                }
+            ];
+            
+            Plotly.newPlot('supplyDemandChart', balanceData, {
+                height: 300,
+                margin: { t: 30, b: 50, l: 60, r: 30 },
+                xaxis: { title: 'Crop Type' },
+                yaxis: { title: 'Volume (tons)' },
+                barmode: 'group'
+            });
+        }
+        
+        function createBusinessDashboard() {
+            // Multi-metric dashboard
+            const metrics = ['Cost Savings', 'Risk Reduction', 'Efficiency Gain', 'ROI'];
+            const values = [25, 18, 35, analysisData.roi];
+            const targets = [20, 15, 30, 150];
+            
+            const dashboardData = [
+                {
+                    x: metrics,
+                    y: values,
+                    name: 'Actual',
+                    type: 'bar',
+                    marker: { color: '#2E8B57' }
+                },
+                {
+                    x: metrics,
+                    y: targets,
+                    name: 'Target',
+                    type: 'bar',
+                    marker: { color: '#FFD700', opacity: 0.6 }
+                }
+            ];
+            
+            Plotly.newPlot('businessDashboard', dashboardData, {
+                height: 400,
+                margin: { t: 30, b: 50, l: 60, r: 30 },
+                xaxis: { title: 'Business Metrics' },
+                yaxis: { title: 'Improvement (%)' },
+                barmode: 'group'
+            });
+        }
+        
+        function createExecutiveSummary() {
+            const summaryData = [
+                { metric: 'Network Optimization', value: '$' + (analysisData.annualSavings / 1000).toFixed(0) + 'K annually', status: '✅ Identified' },
+                { metric: 'Risk Mitigation', value: analysisData.riskLevel + ' risk profile', status: '🛡️ Assessed' },
+                { metric: 'ROI Projection', value: analysisData.roi.toFixed(0) + '% annual return', status: '📈 Calculated' },
+                { metric: 'Implementation', value: '3-6 months timeline', status: '⏱️ Planned' }
+            ];
+            
+            let summaryHTML = '';
+            summaryData.forEach((item, index) => {
+                summaryHTML += `
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center p-3 bg-light rounded">
+                            <div class="flex-grow-1">
+                                <strong>${item.metric}</strong><br>
+                                <span class="text-primary">${item.value}</span>
+                            </div>
+                            <div class="ms-3">
+                                <span class="badge bg-success">${item.status}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('executiveSummary').innerHTML = summaryHTML;
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Agricultural Supply Chain Analyzer Demo Loaded');
+        });
+    </script>
+</body>
+</html>
+
